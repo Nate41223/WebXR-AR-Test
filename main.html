@@ -11,16 +11,21 @@
     </head>
     <body>
         <div>
-            <h2> Hello7 </h2>
+            <h2> Hello8 </h2>
         </div>
         <a-scene ar>
-            <a-box scale="0.25 0.25 0.25" position="0 0 -1" rotation="0 0 0" color="#4CC3D9" scale-on-mouseenter="2 2 2" shadow></a-box>
+            <a-box scale="0.25 0.25 0.25" position="0 0 -1" rotation="0 0 0" color="#4CC3D9" scale-on-mouseenter="to: 2 2 2" shadow></a-box>
         </a-scene>
         <script>
             AFRAME.registerComponent('scale-on-mouseenter'), {
+                schema: {
+                    to: {default: '2.5 2.5 2.5'}
+                },
+                
                 init: function() {
+                    var data = this.data;
                     this.el.addEventListener('mouseenter', function () {
-                        this.setAttribute('scale', 2 2 2);
+                        this.setAttribute('scale', data.to);
                     });
                 }
             };
