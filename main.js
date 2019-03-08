@@ -3,8 +3,8 @@ AFRAME.registerComponent("box", {
         width: {type: 'number', default: 1},
         height: {type: 'number', default: 1},
         depth: {type: 'number', default: 1},
-        position: {type: 'vec3', default: {x:1, y:1, z:1}},
-        color: {type: 'color', default: '#AAA'}
+        position: {type: 'vec3', default: {x:0, y:0, z:-2}},
+        color: {type: 'color', default: '#f00'}
     },
 
     init: function() {
