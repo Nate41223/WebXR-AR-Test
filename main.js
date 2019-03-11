@@ -21,7 +21,7 @@ AFRAME.registerComponent('box', {
 
         el.position = data.position;
 
-        this.setAttribute('position', data.position);
+        el.setAttribute('position', data.position);
     }
 });
 
