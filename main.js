@@ -17,7 +17,7 @@ AFRAME.registerComponent('box', {
 
         this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-        this.position = data.position;
+        //this.position = data.position;
 
         el.setObject3D('mesh', this.mesh);
     }
@@ -43,7 +43,6 @@ AFRAME.registerComponent('hover', {
         var el = this.el;
         
         el.addEventListener('mouseenter', this.meFN);
-
         el.addEventListener('mouseleave', this.mlFN);
     },
 
@@ -51,12 +50,7 @@ AFRAME.registerComponent('hover', {
         var data = this.data;
         var el = this.el;
 
-        el.removeEventListener('mouseenter', function() {
-            el.setAttribute('color', data.color);
-        });
-
-        el.removeEventListener('mouseleave', function() {
-            el.setAttribute('color', data.defaultColor);
-        });
+        el.removeEventListener('mouseenter', this.meFN);
+        el.removeEventListener('mouseleave', this.mlFN);
     }
 });
