@@ -22,3 +22,23 @@ AFRAME.registerComponent('box', {
         el.setObject3D('mesh', this.mesh);
     }
 });
+
+AFRAME.registerComponent('hover', {
+    schema: {
+        color: {default: 'red'},
+        defaultColor: {default: 'blue'}
+    },
+
+    init: function() {
+        var data = this.data;
+        var el = this.el;
+
+        el.addEventListener('mouseenter', function() {
+            el.setAttribute('color', data.color);
+        });
+
+        el.addEventListener('mouseleave', function() {
+            el.setAttribute('color', data.defaultcolor);
+        });
+    }
+});
