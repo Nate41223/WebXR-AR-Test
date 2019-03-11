@@ -20,6 +20,8 @@ AFRAME.registerComponent('box', {
         el.setObject3D('mesh', this.mesh);
 
         el.position = data.position;
+
+        this.setAttribute('position', data.position);
     }
 });
 
