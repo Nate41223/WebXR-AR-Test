@@ -26,20 +26,18 @@ AFRAME.registerComponent('box', {
 AFRAME.registerComponent('hover', {
     schema: {
         color: {default: 'red'},
-        defaultColor: {default: 'blue'}
+        defaultColor: {default: 'blue'},
+        meFN: {function() {el.setAttribute('color', data.color)}},
+        mlFN: {function() {el.setAttribute('color', data.defaultColor)}},
     },
 
     init: function() {
         var data = this.data;
         var el = this.el;
 
-        el.addEventListener('mouseenter', function() {
-            el.setAttribute('color', data.color);
-        });
+        el.addEventListener('mouseenter', data.meFN);
 
-        el.addEventListener('mouseleave', function() {
-            el.setAttribute('color', data.defaultColor);
-        });
+        el.addEventListener('mouseleave', data.mlFN);
     },
 
     remove: function () {
