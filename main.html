@@ -13,14 +13,38 @@
     </head>
     <body>
         <div>
-            <h2> Hello5 </h2>
+            <h2> Hello7 </h2>
         </div>
         
         <script>
+            AFRAME.registerComponent('box', {
+                schema: {
+                    width: {type: 'number', default: .2},
+                    height: {type: 'number', default: .2},
+                    depth: {type: 'number', default: .2},
+                    position: {type: 'vec3', default: {x:0, y:0, z:-2}},
+                    color: {type: 'color', default: '#f00'}
+                },
+            
+                init: function() {
+                    var data = this.data;
+                    var el = this.el;
+                
+                    this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data,depth);
+                
+                    this.material = new THREE.MeshStandardMaterial({color: data.color});
+                
+                    this.mesh = new THREE.Mesh(this.geometry, this.material);
+                
+                    this.position = data.position;
+                
+                    el.setObject3D('mesh', this.mesh);
+                }
+            });
         </script>
         
         <a-scene ar>
-            <a-box scale="0.25 0.25 0.25" position="0 1 -1" rotation="0 0 0" color="#4CC3D9"  shadow>
+            <a-box scale="0.25 0.25 0.25" position="1 0 0" rotation="0 0 0" color="#4CC3D9"  shadow>
                 <a-animation attribute="rotation" to="0 360 0" direction="alternate" dur="2000" repeat ="indefinite"></a-animation>
             </a-box>
             <a-entity box></a-entity>

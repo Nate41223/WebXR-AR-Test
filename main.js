@@ -1,4 +1,4 @@
-AFRAME.registerComponent("box", {
+AFRAME.registerComponent('box', {
     schema: {
         width: {type: 'number', default: .2},
         height: {type: 'number', default: .2},
