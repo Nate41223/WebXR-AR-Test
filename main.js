@@ -40,5 +40,18 @@ AFRAME.registerComponent('hover', {
         el.addEventListener('mouseleave', function() {
             el.setAttribute('color', data.defaultColor);
         });
+    },
+
+    remove: function () {
+        var data = this.data;
+        var el = this.el;
+
+        el.removeEventListener('mouseenter', function() {
+            el.setAttribute('color', data.color);
+        });
+
+        el.removeEventListener('mouseleave', function() {
+            el.setAttribute('color', data.defaultColor);
+        });
     }
 });
