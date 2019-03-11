@@ -19,8 +19,6 @@ AFRAME.registerComponent('box', {
 
         el.setObject3D('mesh', this.mesh);
 
-        el.position = data.position;
-
         el.setAttribute('position', data.position);
     }
 });
@@ -29,6 +27,7 @@ AFRAME.registerComponent('hover', {
     schema: {
         color: {default: 'red'},
         defaultColor: {default: 'blue'},
+        clickColor: {default: 'yellow'},
         
     },
 
@@ -37,6 +36,7 @@ AFRAME.registerComponent('hover', {
         var el = this.el;
         this.meFN = function() {el.setAttribute('color', data.color)};
         this.mlFN = function() {el.setAttribute('color', data.defaultColor)};
+        this.cFN = function() {el.setAttribute('color', data.clickColor)};
 
         this.setupEvents();
     },
@@ -46,13 +46,14 @@ AFRAME.registerComponent('hover', {
         
         el.addEventListener('mouseenter', this.meFN);
         el.addEventListener('mouseleave', this.mlFN);
+        el.addEventListener('click', this.cFN);
     },
 
     remove: function () {
-        var data = this.data;
         var el = this.el;
 
         el.removeEventListener('mouseenter', this.meFN);
         el.removeEventListener('mouseleave', this.mlFN);
+        el.addEventListener('click', this.cFN);
     }
 });
