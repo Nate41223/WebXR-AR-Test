@@ -17,9 +17,9 @@ AFRAME.registerComponent('box', {
 
         this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-        el.position = data.position;
-
         el.setObject3D('mesh', this.mesh);
+
+        el.position = data.position;
     }
 });
 
