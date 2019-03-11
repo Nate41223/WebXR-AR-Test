@@ -27,17 +27,22 @@ AFRAME.registerComponent('hover', {
     schema: {
         color: {default: 'red'},
         defaultColor: {default: 'blue'},
-        meFN: function() {el.setAttribute('color', data.color)},
-        mlFN: function() {el.setAttribute('color', data.defaultColor)},
+        
     },
 
     init: function() {
         var data = this.data;
         var el = this.el;
+        this.meFN = function() {el.setAttribute('color', data.color)};
+        this.mlFN = function() {el.setAttribute('color', data.defaultColor)};
 
-        el.addEventListener('mouseenter', data.meFN);
+        this.setupEvents();
+    },
 
-        el.addEventListener('mouseleave', data.mlFN);
+    setupEvents: function() {
+        el.addEventListener('mouseenter', this.meFN);
+
+        el.addEventListener('mouseleave', this.mlFN);
     },
 
     remove: function () {
