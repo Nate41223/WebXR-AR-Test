@@ -38,7 +38,7 @@ AFRAME.registerComponent('hover', {
         });
 
         el.addEventListener('mouseleave', function() {
-            el.setAttribute('color', data.defaultcolor);
+            el.setAttribute('color', data.defaultColor);
         });
     }
 });
