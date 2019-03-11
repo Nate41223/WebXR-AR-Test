@@ -40,6 +40,8 @@ AFRAME.registerComponent('hover', {
     },
 
     setupEvents: function() {
+        this.meFN = function() {el.setAttribute('color', data.color)};
+        this.mlFN = function() {el.setAttribute('color', data.defaultColor)};
         el.addEventListener('mouseenter', this.meFN);
 
         el.addEventListener('mouseleave', this.mlFN);
