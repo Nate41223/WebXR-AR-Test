@@ -27,8 +27,8 @@ AFRAME.registerComponent('hover', {
     schema: {
         color: {default: 'red'},
         defaultColor: {default: 'blue'},
-        meFN: {function() {el.setAttribute('color', data.color)}},
-        mlFN: {function() {el.setAttribute('color', data.defaultColor)}},
+        meFN: function() {el.setAttribute('color', data.color)},
+        mlFN: function() {el.setAttribute('color', data.defaultColor)},
     },
 
     init: function() {
