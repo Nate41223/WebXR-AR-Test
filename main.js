@@ -72,6 +72,7 @@ AFRAME.registerComponent('imageTracking', {
     },
 
     tick: function () {
+        this.el.setAttribute('visible', false);
         var anchors = this.source.getAnchors();
         if (anchors && anchors.length) {
             for (var i = 0; i < anchors.length; i++) {
