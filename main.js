@@ -58,11 +58,15 @@ AFRAME.registerComponent('hover', {
     }
 });
 
+var imageAnchorToPlaneQuat = new THREE.Quaternion();          
+imageAnchorToPlaneQuat.setFromAxisAngle(new THREE.Vector3(1,0,0), THREE.Math.DEG2RAD * -90);
+
 AFRAME.registerComponent('imagetracking', {
     schema: {
         name: { type: 'string'},
         src: { type: 'string'},
-        physicalWidth: {type: 'number'}
+        physicalWidth: {type: 'number'},
+        vertical: { default: false },
     },
 
     init: function() {
@@ -78,6 +82,10 @@ AFRAME.registerComponent('imagetracking', {
                 if (anchors[i].name === this.data.name) {
                     var mat = new THREE.Matrix4().fromArray(anchors[i].modelMatrix);
                     mat.decompose(this.el.object3D.position, this.el.object3D.quaternion, this.el.object3D.scale);
+                    if (this.data.vertical) { 
+                        this.el.object3D.quaternion.multiply(imageAnchorToPlaneQuat);
+                    }
+
 
                     if (!this.el.getAttribute('visible')) {
                         this.el.setAttribute('visible', true);
@@ -92,9 +100,6 @@ AFRAME.registerComponent('imagetracking', {
         }
     }
 });
-
-var imageAnchorToPlaneQuat = new THREE.Quaternion();          
-imageAnchorToPlaneQuat.setFromAxisAngle(new THREE.Vector3(1,0,0), THREE.Math.DEG2RAD * -90);
 
 AFRAME.registerComponent('show-at-image-marker', {
   schema: {
