@@ -13,7 +13,7 @@
     </head>
     <body>
         <div>
-            <h2> Hello0 </h2>
+            <h2> Hello1 </h2>
         </div>
         
         <script>
@@ -22,7 +22,7 @@
         <a-scene ar="worldSensing: true" cursor="rayOrigin: mouse">
             <a-entity id="logo" show-at-image-marker="
                                     name:keyboard;
-                                    src:Keyboard.jpeg;
+                                    src:https://nate41223.github.io/WebXR-AR-Test/Keyboard.jpeg;
                                     physicalWidth:0.30;
                                     ">
                 <a-entity box>
@@ -36,7 +36,8 @@
             <!--<a-camera><a-cursor></a-cursor></a-camera>-->
             <a-assets>
             <!-- preload image -->
-                <img src="Keyboard.jpeg"></img>
+                <img crossorigin="anonymous"
+                     src="https://nate41223.github.io/WebXR-AR-Test/Keyboard.jpeg"></img>
             </a-assets>
         </a-scene>
     </body>
