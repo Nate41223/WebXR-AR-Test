@@ -71,11 +71,24 @@ AFRAME.registerComponent('imagetracking', {
 
     init: function() {
         this.el.setAttribute('visible', false);
-        this.source = document.querySelector('[ar]').components.ar.getSource();
-        this.source.addImage(this.data.name, this.data.src, this.data.physicalWidth);
+        this.added = false;
     },
 
     tick: function () {
+
+        if (!this.source) {
+          this.source = document.querySelector('[ar]').components.ar.getSource();
+        }
+        
+        if (!this.source) { return; }
+        
+        if (!this.added) {
+          this.source.addImage(this.data.name, 
+                             this.data.src,
+                             this.data.physicalWidth);
+          this.added = true;
+          return;
+        }
         var anchors = this.source.getAnchors();
         if (anchors && anchors.length) {
             for (var i = 0; i < anchors.length; i++) {
