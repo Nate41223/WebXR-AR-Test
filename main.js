@@ -71,14 +71,13 @@ AFRAME.registerComponent('imagetracking', {
 
     init: function() {
         this.el.setAttribute('visible', false);
-        this.source = document.querySelector('[ar]').components.ar.getSource();
         this.added = false;
     },
 
     tick: function () {
 
         if (!this.source) {
-          
+          this.source = document.querySelector('[ar]').components.ar.getSource();
         }
         
         if (!this.source) { return; }
@@ -99,13 +98,13 @@ AFRAME.registerComponent('imagetracking', {
                     if (this.data.vertical) { 
                         this.el.object3D.quaternion.multiply(imageAnchorToPlaneQuat);
                     }
-
+                    /*
                     if (!this.el.getAttribute('visible')) {
                         this.el.setAttribute('visible', true);
                         this.el.emit('imageanchor', {anchor: anchors[i]});
                     } else {
                         this.el.emit('imageanchorupdate', {anchor: anchors[i]});
-                    }
+                    } */
                     
                     if(!this.removed) {
                         this.removed = true;
