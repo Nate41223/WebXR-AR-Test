@@ -94,7 +94,7 @@ AFRAME.registerComponent('imagetracking', {
             for (var i = 0; i < anchors.length; i++) {
                 if (anchors[i].name === this.data.name) {
                     var mat = new THREE.Matrix4().fromArray(anchors[i].modelMatrix);
-                    //mat.decompose(this.el.object3D.position, this.el.object3D.quaternion, this.el.object3D.scale);
+                    mat.decompose(this.el.object3D.position, this.el.object3D.quaternion, this.el.object3D.scale);
                     if (this.data.vertical) { 
                         this.el.object3D.quaternion.multiply(imageAnchorToPlaneQuat);
                     }
