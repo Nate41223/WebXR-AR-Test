@@ -66,7 +66,7 @@ AFRAME.registerComponent('imageTracking', {
     },
 
     init: function() {
-        //this.el.setAttribute('visible', false);
+        this.el.setAttribute('visible', false);
         this.source = document.querySelector('[ar]').components.ar.getSource();
         this.source.addImage(this.data.name, this.data.src, this.data.physicalWidth);
     },
