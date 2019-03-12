@@ -98,13 +98,13 @@ AFRAME.registerComponent('imagetracking', {
                     if (this.data.vertical) { 
                         this.el.object3D.quaternion.multiply(imageAnchorToPlaneQuat);
                     }
-                    /*
+                    
                     if (!this.el.getAttribute('visible')) {
                         this.el.setAttribute('visible', true);
                         this.el.emit('imageanchor', {anchor: anchors[i]});
                     } else {
                         this.el.emit('imageanchorupdate', {anchor: anchors[i]});
-                    } */
+                    } 
                     
                     if(!this.removed) {
                         this.removed = true;
