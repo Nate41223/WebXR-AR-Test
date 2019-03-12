@@ -13,7 +13,7 @@
     </head>
     <body>
         <div>
-            <h2> Hello6 </h2>
+            <h2> Hello7 </h2>
         </div>
         
         <script>
@@ -22,7 +22,7 @@
         <a-scene ar="worldSensing: true" cursor="rayOrigin: mouse">
             <a-entity id="logo" show-at-image-marker="
                                     name:keyboard;
-                                    src:Keyboard.jpeg;
+                                    src:http://cdn.glitch.com/5faa540f-1ef0-40d6-a191-5215a51c3aca%2Fhubs.png?1528753564704;
                                     physicalWidth:0.20;
                                     ">
                 <a-entity box>
@@ -34,6 +34,11 @@
             </a-box>
             <!--<a-entity box></a-entity>-->
             <!--<a-camera><a-cursor></a-cursor></a-camera>-->
+            <a-assets>
+            <!-- preload image -->
+                <img crossorigin="anonymous"
+                     src="http://cdn.glitch.com/5faa540f-1ef0-40d6-a191-5215a51c3aca%2Fhubs.png?1528753564704"></img>
+            </a-assets>
         </a-scene>
     </body>
 </html>
