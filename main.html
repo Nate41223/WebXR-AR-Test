@@ -13,7 +13,7 @@
     </head>
     <body>
         <div>
-            <h2> Hello9 </h2>
+            <h2> Hello0 </h2>
         </div>
         
         <script>
@@ -23,7 +23,7 @@
             <a-entity id="logo" show-at-image-marker="
                                     name:keyboard;
                                     src:Keyboard.jpeg;
-                                    physicalWidth:0.20;
+                                    physicalWidth:0.30;
                                     ">
                 <a-entity box>
                         <a-animation attribute="rotation" to="0 360 0" direction="alternate" dur="2000" repeat ="indefinite"></a-animation>
@@ -34,6 +34,10 @@
             </a-box>
             <!--<a-entity box></a-entity>-->
             <!--<a-camera><a-cursor></a-cursor></a-camera>-->
+            <a-assets>
+            <!-- preload image -->
+                <img src="Keyboard.jpeg"></img>
+            </a-assets>
         </a-scene>
     </body>
 </html>
