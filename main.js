@@ -7,8 +7,8 @@ AFRAME.registerComponent('words', {
         var el = this.el;
         el.setAttribute('text', {
             value: this.data.value,
-            position: this.data.position,
         });
+        el.setAttribute('position', this.data.position);
     }
 });
 
