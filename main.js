@@ -105,11 +105,11 @@ AFRAME.registerComponent('imagetracking', {
                     } else {
                         this.el.emit('imageanchorupdate', {anchor: anchors[i]});
                     }
-
+                    /*
                     if(!this.removed) {
                         this.removed = true;
                         this.source.removeImage(this.data.name);
-                    }
+                    } */
                 }
             }
         }
