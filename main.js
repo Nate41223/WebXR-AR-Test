@@ -1,12 +1,14 @@
 AFRAME.registerComponent('words', {
     schema: {
         value: {type: 'string', default: 'Hello World Register'},
+        side: {type: 'string', default: 'double'},
         position: {type: 'vec3', default: {x:0, y:.2, z:-.5}},
     },
     init:function() {
         var el = this.el;
         el.setAttribute('text', {
             value: this.data.value,
+            side: this.data.side,
         });
         el.setAttribute('position', this.data.position);
     }
