@@ -57,7 +57,7 @@ AFRAME.registerComponent('hover', {
         el.addEventListener('click', this.cFN);
     }
 });
-
+/*
 AFRAME.registerComponent('imageTracking', {
     schema: {
         name: { type: 'string'},
@@ -91,4 +91,4 @@ AFRAME.registerComponent('imageTracking', {
             }
         }
     }
-})
+}) */
