@@ -71,13 +71,14 @@ AFRAME.registerComponent('imagetracking', {
 
     init: function() {
         this.el.setAttribute('visible', false);
+        this.source = document.querySelector('[ar]').components.ar.getSource();
         this.added = false;
     },
 
     tick: function () {
 
         if (!this.source) {
-          this.source = document.querySelector('[ar]').components.ar.getSource();
+          
         }
         
         if (!this.source) { return; }
