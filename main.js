@@ -91,7 +91,7 @@ AFRAME.registerComponent('imagetracking', {
             }
         }
     }
-})
+});
 
 var imageAnchorToPlaneQuat = new THREE.Quaternion();          
 imageAnchorToPlaneQuat.setFromAxisAngle(new THREE.Vector3(1,0,0), THREE.Math.DEG2RAD * -90);
