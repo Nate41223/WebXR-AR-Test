@@ -1,4 +1,4 @@
-AFRAME.registerComponent('text', {
+AFRAME.registerComponent('words', {
     schema: {
         value: {type: 'string', default: 'Hello World Register'},
         position: {type: 'vec3', default: {x:0, y:.2, z:-.5}},
