@@ -96,7 +96,7 @@ AFRAME.registerComponent('imagetracking', {
                     //var mat = new THREE.Matrix4().fromArray(anchors[i].modelMatrix);
                     //mat.decompose(this.el.object3D.position, this.el.object3D.quaternion, this.el.object3D.scale);
                     if (this.data.vertical) { 
-                        //this.el.object3D.quaternion.multiply(imageAnchorToPlaneQuat);
+                        this.el.object3D.quaternion.multiply(imageAnchorToPlaneQuat);
                     }
 
                     if (!this.el.getAttribute('visible')) {
