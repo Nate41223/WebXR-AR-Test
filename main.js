@@ -57,3 +57,38 @@ AFRAME.registerComponent('hover', {
         el.addEventListener('click', this.cFN);
     }
 });
+
+AFRAME.registerComponent('imageTracking', {
+    schema: {
+        name: { type: 'string'},
+        src: { type: 'string'},
+        physicalWidth: {type: 'number'}
+    },
+
+    init: function() {
+        this.el.setAttribute('visible', false);
+        this.source = document.querySelector('[ar]').components.ar.getSource();
+        this.source.addImage(this.data.name, this.data.src, this.data.physicalWidth);
+    },
+
+    tick: function () {
+        var anchors = this.source.getAnchors();
+        if (anchors && anchors.length) {
+            for (var i = 0; i < anchors.length; i++) {
+                if (anchors[i].name === this.data.name) {
+                    var mat = new THREE.Matrix4().fromArray(anchors[i].modelMatrix);
+                    mat.decompose(this.el.object3D.position, this.el.object3D.quaternion, this.el.object3D.scale);
+
+                    if (!this.el.getAttribute('visible')) {
+                        this.el.setAttribute('visible', true);
+                    }
+
+                    if(!this.removed) {
+                        this.removed = true;
+                        this.source.removeImage(this.data.name);
+                    }
+                }
+            }
+        }
+    }
+})
