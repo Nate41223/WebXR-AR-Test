@@ -1,8 +1,8 @@
 AFRAME.registerComponent('log', {
     schema: {
         type: {type: 'string', default: 'plane'},
-        width: {type: 'number', default: 2},
-        height: {type: 'number', default: 2},
+        width: {type: 'number', default: 1},
+        height: {type: 'number', default: .5},
         position:{type: 'vec3', default: {x:-1, y:0, z:0}},
         rotation: {type: 'vec3', default: {x:0, y:90, z:0}},
         side: {type: 'string', default: 'double'},
@@ -29,13 +29,17 @@ AFRAME.registerComponent('words', {
     schema: {
         value: {type: 'string', default: 'Hello World Register'},
         side: {type: 'string', default: 'double'},
-        position: {type: 'vec3', default: {x:0, y:.2, z:-.5}},
+        anchor: {type: 'string', default: 'left'},
+        baseline: {type: 'string', default: 'bottom'},
+        position: {type: 'vec3', default: {x:0, y:0, z:0}},
     },
     init: function() {
         var el = this.el;
         el.setAttribute('text', {
             value: this.data.value,
             side: this.data.side,
+            anchor: this.data.anchor,
+            baseline: this.data.baseline,
         });
         el.setAttribute('position', this.data.position);
     }
