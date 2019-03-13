@@ -5,6 +5,7 @@ AFRAME.registerComponent('log', {
         height: {type: 'number', default: 2},
         position:{type: 'vec3', default: {x:-1, y:0, z:0}},
         rotation: {type: 'vec3', default: {x:0, y:45, z:0}},
+        side: {type: 'string', default: 'double'},
 
     },
     init: function() {
@@ -13,6 +14,9 @@ AFRAME.registerComponent('log', {
             primitive: this.data.type,
             width: this.data.width,
             height: this.data.height,
+        });
+        el.setAttribute('material', {
+            side: this.data.side,
         });
         el.setAttribute('position', this.data.position);
         el.setAttribute('rotation', this.data.rotation);
