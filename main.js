@@ -1,10 +1,31 @@
+AFRAME.registerComponent('log', {
+    schema: {
+        type: {type: 'string', default: 'plane'},
+        width: {type: 'number', default: 10},
+        height: {type: 'number', default: 10},
+        position:{type: 'vec3', default: {x:0, y:0, z:0}},
+        rotation: {type: 'vec3', default: {x:0, y:0, z:0}},
+
+    },
+    init: function() {
+        var el = this.el;
+        el.setAttribute('geometry', {
+            primitive: this.data.type,
+            width: this.data.width,
+            height: this.data.height,
+        });
+        el.setAttribute('position', this.data.position);
+        el.setAttribute('rotation', this.data.rotation);
+    }
+});
+
 AFRAME.registerComponent('words', {
     schema: {
         value: {type: 'string', default: 'Hello World Register'},
         side: {type: 'string', default: 'double'},
         position: {type: 'vec3', default: {x:0, y:.2, z:-.5}},
     },
-    init:function() {
+    init: function() {
         var el = this.el;
         el.setAttribute('text', {
             value: this.data.value,
