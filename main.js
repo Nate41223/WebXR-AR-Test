@@ -1,10 +1,10 @@
 AFRAME.registerComponent('log', {
     schema: {
         type: {type: 'string', default: 'plane'},
-        width: {type: 'number', default: 10},
-        height: {type: 'number', default: 10},
+        width: {type: 'number', default: 1},
+        height: {type: 'number', default: 1},
         position:{type: 'vec3', default: {x:0, y:0, z:0}},
-        rotation: {type: 'vec3', default: {x:0, y:0, z:0}},
+        rotation: {type: 'vec3', default: {x:0, y:90, z:0}},
 
     },
     init: function() {
