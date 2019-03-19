@@ -1,58 +1,7 @@
-AFRAME.registerComponent('log', {
-    schema: {
-        type: {type: 'string', default: 'plane'},
-        width: {type: 'number', default: 1},
-        height: {type: 'number', default: .5},
-        position:{type: 'vec3', default: {x:-1, y:0, z:0}},
-        rotation: {type: 'vec3', default: {x:0, y:90, z:0}},
-        side: {type: 'string', default: 'double'},
-        opacity: {type: 'number', default: .4},
-
-    },
-    init: function() {
-        var el = this.el;
-        el.setAttribute('geometry', {
-            primitive: this.data.type,
-            width: this.data.width,
-            height: this.data.height,
-        });
-        el.setAttribute('material', {
-            side: this.data.side,
-            opacity: this.data.opacity,
-        });
-        el.setAttribute('position', this.data.position);
-        el.setAttribute('rotation', this.data.rotation);
-    }
-});
-
-AFRAME.registerComponent('words', {
-    schema: {
-        value: {type: 'string', default: 'Hello World Register'},
-        side: {type: 'string', default: 'double'},
-        anchor: {type: 'string', default: 'center'},
-        align: {type: 'string', default: 'center'},
-        baseline: {type: 'string', default: 'bottom'},
-        position: {type: 'vec3', default: {x:0, y:0, z:0}},
-    },
-    init: function() {
-        var el = this.el;
-        el.setAttribute('text', {
-            value: this.data.value,
-            side: this.data.side,
-            anchor: this.data.anchor,
-            baseline: this.data.baseline,
-            align: this.data.align,
-        });
-        el.setAttribute('position', this.data.position);
-    }
-});
-
 var fishFoodCount = 2;
 
 AFRAME.registerComponent('box', {
     schema: {
-        //scale: {type: 'vec3', default: {x:.05, y:.05, z:.05}},
-        //position: {type: 'vec3', default: {x:0, y:0, z:0}},
         color: {type: 'color', default: 'red'},
         colorChange: {type: 'color', default: 'green'},
     },
@@ -60,20 +9,6 @@ AFRAME.registerComponent('box', {
     init: function() {
         var data = this.data;
         var el = this.el;
-
-        /*
-        this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
-
-        this.material = new THREE.MeshStandardMaterial({color: data.color});
-
-        this.mesh = new THREE.Mesh(this.geometry, this.material);
-
-        el.setObject3D('mesh', this.mesh);
-        */
-
-        //el.setAttribute('position', data.position);
-        //el.setAttribute('color', data.color);
-        //el.setAttribute('scale', data.scale);
 
         this.cE = function() {
             el.setAttribute('material', {color: data.colorChange});
