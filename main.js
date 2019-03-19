@@ -61,6 +61,7 @@ AFRAME.registerComponent('box', {
         var data = this.data;
         var el = this.el;
 
+        /*
         this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
 
         this.material = new THREE.MeshStandardMaterial({color: data.color});
@@ -68,9 +69,10 @@ AFRAME.registerComponent('box', {
         this.mesh = new THREE.Mesh(this.geometry, this.material);
 
         el.setObject3D('mesh', this.mesh);
-        el.flushToDOM();
+        */
 
         el.setAttribute('position', data.position);
+        el.setAttribute('color', data.color);
 
         this.cE = function() {el.setAttribute('color', data.colorChange)};
         this.setupEvents();
