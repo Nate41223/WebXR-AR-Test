@@ -72,17 +72,17 @@ AFRAME.registerComponent('box', {
 
         el.setAttribute('position', data.position);
 
-        this.cFN = () => { fishFoodCount++ };
+        this.cFN = function() { fishFoodCount++ };
         this.setupEvents();
     },
 
-    setupEvents: () => {
+    setupEvents: function() {
         var el = this.el;
 
         el.addEventListener('click', this.cFN);
     },
 
-    remove: () => {
+    remove: function() {
         var el = this.el;
 
         el.removeEventListener('click', this.cFN);
