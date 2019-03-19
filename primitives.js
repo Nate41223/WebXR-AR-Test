@@ -12,3 +12,18 @@ AFRAME.registerPrimitive('a-boxtest', {
         z: 'position.z',
     },
 });
+
+AFRAME.registerPrimitive('a-planetest', {
+    defaultComponents: {
+        geometry: {primitive: 'plane', width:1, height:.5},
+        material: {opacity:.4, side:'double'},
+        rotation: {x:0, y:90, z:0},
+        position: {x:-1, y:0, z:0},
+    },
+
+    mappings: {
+        x: 'position.x',
+        y: 'position.y',
+        z: 'position.z',
+    },
+});
