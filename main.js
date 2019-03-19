@@ -51,8 +51,8 @@ var fishFoodCount = 2;
 
 AFRAME.registerComponent('box', {
     schema: {
-        scale: {type: 'vec3', default: {x:.05, y:.05, z:.05}},
-        position: {type: 'vec3', default: {x:0, y:0, z:0}},
+        //scale: {type: 'vec3', default: {x:.05, y:.05, z:.05}},
+        //position: {type: 'vec3', default: {x:0, y:0, z:0}},
         color: {type: 'color', default: 'red'},
         colorChange: {type: 'color', default: 'blue'},
     },
@@ -71,9 +71,9 @@ AFRAME.registerComponent('box', {
         el.setObject3D('mesh', this.mesh);
         */
 
-        el.setAttribute('position', data.position);
+        //el.setAttribute('position', data.position);
         el.setAttribute('color', data.color);
-        el.setAttribute('scale', data.scale);
+        //el.setAttribute('scale', data.scale);
 
         this.cE = function() {
             el.setAttribute('color', data.colorChange);
