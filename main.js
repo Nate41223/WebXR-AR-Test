@@ -80,13 +80,13 @@ AFRAME.registerComponent('box', {
     setupEvents: function() {
         var el = this.el;
 
-        el.addEventListener('click', this.cE);
+        el.addEventListener('mousedown', this.cE);
     },
 
     remove: function() {
         var el = this.el;
 
-        el.removeEventListener('click', this.cE);
+        el.removeEventListener('mousedown', this.cE);
     },
 });
 
