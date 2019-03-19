@@ -29,7 +29,7 @@ AFRAME.registerComponent('words', {
     schema: {
         value: {type: 'string', default: 'Hello World Register'},
         side: {type: 'string', default: 'double'},
-        anchor: {type: 'string', default: 'left'},
+        anchor: {type: 'string', default: 'center'},
         align: {type: 'string', default: 'center'},
         baseline: {type: 'string', default: 'bottom'},
         position: {type: 'vec3', default: {x:0, y:0, z:0}},
