@@ -4,7 +4,7 @@ AFRAME.registerComponent('log', {
         width: {type: 'number', default: 1},
         height: {type: 'number', default: .5},
         position:{type: 'vec3', default: {x:-1, y:0, z:0}},
-        rotation: {type: 'vec3', default: {x:0, y:-90, z:0}},
+        rotation: {type: 'vec3', default: {x:0, y:0, z:0}},
         side: {type: 'string', default: 'double'},
         opacity: {type: 'number', default: .4},
 
