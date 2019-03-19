@@ -45,7 +45,7 @@ AFRAME.registerComponent('words', {
     }
 });
 
-var fishFoodCount = 0;
+var fishFoodCount = 2;
 
 AFRAME.registerComponent('box', {
     schema: {
@@ -72,20 +72,20 @@ AFRAME.registerComponent('box', {
 
         el.setAttribute('position', data.position);
 
-        this.cFN = function() { fishFoodCount++ };
+        this.cE = function() { fishFoodCount = fishFoodCount + 1 };
         this.setupEvents();
     },
 
     setupEvents: function() {
         var el = this.el;
 
-        el.addEventListener('click', this.cFN);
+        el.addEventListener('click', this.cE);
     },
 
     remove: function() {
         var el = this.el;
 
-        el.removeEventListener('click', this.cFN);
+        el.removeEventListener('click', this.cE);
     },
 });
 
