@@ -30,6 +30,7 @@ AFRAME.registerComponent('words', {
         value: {type: 'string', default: 'Hello World Register'},
         side: {type: 'string', default: 'double'},
         anchor: {type: 'string', default: 'left'},
+        align: {type: 'string', default: 'center'},
         baseline: {type: 'string', default: 'bottom'},
         position: {type: 'vec3', default: {x:0, y:0, z:0}},
     },
@@ -40,6 +41,7 @@ AFRAME.registerComponent('words', {
             side: this.data.side,
             anchor: this.data.anchor,
             baseline: this.data.baseline,
+            align: this.data.align,
         });
         el.setAttribute('position', this.data.position);
     }
