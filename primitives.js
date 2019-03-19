@@ -41,7 +41,7 @@ AFRAME.registerPrimitive('a-texttest', {
     },
 
     mappings: {
-        T: 'text.Value',
+        t: 'text.value',
         x: 'position.x',
         y: 'position.y',
         z: 'position.z',
