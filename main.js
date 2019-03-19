@@ -53,7 +53,8 @@ AFRAME.registerComponent('box', {
         height: {type: 'number', default: .05},
         depth: {type: 'number', default: .05},
         position: {type: 'vec3', default: {x:0, y:0, z:0}},
-        color: {type: 'color', default: 'red'}
+        color: {type: 'color', default: 'red'},
+        colorChange: {type: 'color', default: 'blue'},
     },
 
     init: function() {
@@ -70,7 +71,7 @@ AFRAME.registerComponent('box', {
 
         el.setAttribute('position', data.position);
 
-        this.cE = function() { el.setAttribute('color', 'blue')};
+        this.cE = function() { el.setAttribute('color', this.data.colorChange)};
         this.setupEvents();
     },
 
