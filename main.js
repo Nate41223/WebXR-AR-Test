@@ -54,8 +54,6 @@ AFRAME.registerComponent('box', {
         depth: {type: 'number', default: .05},
         position: {type: 'vec3', default: {x:0, y:0, z:0}},
         color: {type: 'color', default: 'red'}
-
- 
     },
 
     init: function() {
@@ -72,7 +70,7 @@ AFRAME.registerComponent('box', {
 
         el.setAttribute('position', data.position);
 
-        this.cE = function() { fishFoodCount = fishFoodCount + 1 };
+        this.cE = function() { el.setAttribute('color', 'blue')};
         this.setupEvents();
     },
 
