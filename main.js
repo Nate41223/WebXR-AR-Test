@@ -52,7 +52,7 @@ AFRAME.registerComponent('box', {
         width: {type: 'number', default: .05},
         height: {type: 'number', default: .05},
         depth: {type: 'number', default: .05},
-        position: {type: 'vec3', default: {x:0, y:0, z:0}},
+        position: {type: 'vec3', default: {x:-1, y:0, z:0}},
         color: {type: 'color', default: 'red'},
         colorChange: {type: 'color', default: 'blue'},
     },
