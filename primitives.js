@@ -27,3 +27,22 @@ AFRAME.registerPrimitive('a-planetest', {
         z: 'position.z',
     },
 });
+
+AFRAME.registerPrimitive('a-texttest', {
+    defaultComponents: {
+        text: { 
+            value: 'Hello World Register',
+            side: 'double',
+            anchor: 'center',
+            baseline: 'bottom',
+            align: 'center',
+        },
+        position: {x:0, y:0, z:0},
+    },
+
+    mappings: {
+        x: 'position.x',
+        y: 'position.y',
+        z: 'position.z',
+    },
+});
