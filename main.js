@@ -54,7 +54,7 @@ AFRAME.registerComponent('box', {
         //scale: {type: 'vec3', default: {x:.05, y:.05, z:.05}},
         //position: {type: 'vec3', default: {x:0, y:0, z:0}},
         color: {type: 'color', default: 'red'},
-        colorChange: {type: 'color', default: 'blue'},
+        colorChange: {type: 'color', default: 'green'},
     },
 
     init: function() {
