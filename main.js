@@ -73,7 +73,10 @@ AFRAME.registerComponent('box', {
         el.setAttribute('color', data.color);
         el.setAttribute('scale', data.scale);
 
-        this.cE = function() {el.setAttribute('color', data.colorChange)};
+        this.cE = function() {
+            el.setAttribute('color', data.colorChange);
+            fishFoodCount++;
+        };
         this.setupEvents();
     },
 
