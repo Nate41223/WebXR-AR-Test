@@ -7,5 +7,8 @@ AFRAME.registerPrimitive('a-boxtest', {
     },
 
     mappings: {
+        x: 'position.x',
+        y: 'position.y',
+        z: 'position.z',
     },
 });
