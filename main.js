@@ -76,7 +76,7 @@ AFRAME.registerComponent('box', {
         //el.setAttribute('scale', data.scale);
 
         this.cE = function() {
-            el.setAttribute('material', data.colorChange);
+            el.setAttribute('material', {color: data.colorChange});
             fishFoodCount++;
             document.getElementById("fish").innerHTML = "FF: " + fishFoodCount;
         };
