@@ -12,6 +12,7 @@ h2 {
 
 #ffh {
     width: 100px;
+    top: 10px;
     position: relative;
     float: right;
     background-color: black;
