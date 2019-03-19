@@ -6,4 +6,7 @@ h2 {
 
 #ffh {
     position: absolute;
+    display: none;
+    float: right;
+    background-color: black;
 }
