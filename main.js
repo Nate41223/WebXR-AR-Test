@@ -71,7 +71,7 @@ AFRAME.registerComponent('box', {
 
         el.setAttribute('position', data.position);
 
-        this.cE = function() { el.setAttribute('color', this.data.colorChange)};
+        this.cE = function() {el.setAttribute('color', data.colorChange)};
         this.setupEvents();
     },
 
