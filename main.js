@@ -45,6 +45,8 @@ AFRAME.registerComponent('words', {
     }
 });
 
+var fishFoodCount = 0;
+
 AFRAME.registerComponent('box', {
     schema: {
         width: {type: 'number', default: .05},
@@ -52,6 +54,8 @@ AFRAME.registerComponent('box', {
         depth: {type: 'number', default: .05},
         position: {type: 'vec3', default: {x:0, y:0, z:0}},
         color: {type: 'color', default: 'red'}
+
+ 
     },
 
     init: function() {
@@ -67,7 +71,22 @@ AFRAME.registerComponent('box', {
         el.setObject3D('mesh', this.mesh);
 
         el.setAttribute('position', data.position);
-    }
+
+        this.cFN = () => { fishFoodCount++ };
+        this.setupEvents();
+    },
+
+    setupEvents: () => {
+        var el = this.el;
+
+        el.addEventListener('click', this.cFN);
+    },
+
+    remove: () => {
+        var el = this.el;
+
+        el.removeEventListener('click', this.cFN);
+    },
 });
 
 AFRAME.registerComponent('hover', {
@@ -101,7 +120,7 @@ AFRAME.registerComponent('hover', {
 
         el.removeEventListener('mouseenter', this.meFN);
         el.removeEventListener('mouseleave', this.mlFN);
-        el.addEventListener('click', this.cFN);
+        el.removeEventListener('click', this.cFN);
     }
 });
 
