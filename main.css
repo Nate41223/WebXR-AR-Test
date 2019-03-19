@@ -4,9 +4,19 @@ h2 {
     font-weight: bold;
 }
 
+#testing {
+    width: 100%;
+    position: fixed;
+    top: 20px;
+}
+
 #ffh {
-    position: absolute;
-    display: none;
+    width: 100px;
+    position: relative;
     float: right;
     background-color: black;
+}
+
+#fish {
+    margin: 10px 0px;
 }
