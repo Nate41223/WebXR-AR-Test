@@ -9,11 +9,12 @@
         <script src="https://cdn.jsdelivr.net/npm/three.ar.js@latest/dist/three.ar.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/chenzlabs/aframe-ar@master/dist/aframe-ar.js"></script>
         <script src="main.js"></script>
+        <script src="primitives.js"></script>
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
         <div id= "testing">
-            <h2> Hello3 </h2>
+            <h2> Hello4 </h2>
         </div>
         <div id="ffh">
             <h2 id="fish">FF: <script>document.write(fishFoodCount)</script></h2>
@@ -39,6 +40,8 @@
             <a-entity log id="log">
                 <a-entity words></a-entity>
             </a-entity>
+            <a-box box></a-box>
+            <a-boxtest position="0 0 -1"></a-boxtest>
             <!--<a-entity box></a-entity>-->
             <!--<a-camera><a-cursor></a-cursor></a-camera>-->
             <a-assets>
