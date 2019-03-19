@@ -31,7 +31,7 @@ AFRAME.registerPrimitive('a-planetest', {
 AFRAME.registerPrimitive('a-texttest', {
     defaultComponents: {
         text: { 
-            value: 'Hello World Register',
+            value: 'Hello World 2.0',
             side: 'double',
             anchor: 'center',
             baseline: 'bottom',
