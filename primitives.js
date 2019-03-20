@@ -1,3 +1,4 @@
+// basic box creation
 AFRAME.registerPrimitive('a-boxtest', {
     defaultComponents: {
         geometry: {primitive: 'box'},
@@ -12,7 +13,7 @@ AFRAME.registerPrimitive('a-boxtest', {
         z: 'position.z',
     },
 });
-
+// basic plane creation
 AFRAME.registerPrimitive('a-planetest', {
     defaultComponents: {
         geometry: {primitive: 'plane', width:1, height:.5},
@@ -27,7 +28,7 @@ AFRAME.registerPrimitive('a-planetest', {
         z: 'position.z',
     },
 });
-
+// basic centered text creation
 AFRAME.registerPrimitive('a-texttest', {
     defaultComponents: {
         text: { 
