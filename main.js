@@ -18,10 +18,10 @@ AFRAME.registerComponent('fishfoodcollection', {
             document.getElementById("fish").innerHTML = "FF: " + fishFoodCount;
         };
         this.setupEvents();
+        console.log("hello");
     },
     // called whenever a component's property is updated using setAttribute
     update: function() {
-        console.log("hello");
     },
     // sets up the event listeners
     setupEvents: function() {
