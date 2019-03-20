@@ -6,7 +6,7 @@ AFRAME.registerComponent('fishfoodcollection', {
     // holds variables to be called in this component
     schema: {
         colorChange: {type: 'color', default: 'green'},
-        id: {type: 'string', default: ''},
+        id: {type: 'string'},
     },
     // sets up component for use
     init: function() {
@@ -22,6 +22,7 @@ AFRAME.registerComponent('fishfoodcollection', {
         this.setupEvents();
         if(data.id) this.tracker = document.querySelector('#' + data.id);
         console.log(tracker);
+        console.log(el.getAttribute('visible'));
     },
     // sets up the event listeners
     setupEvents: function() {
