@@ -71,7 +71,7 @@ AFRAME.registerComponent('hover', {
 
 var imageAnchorToPlaneQuat = new THREE.Quaternion();          
 imageAnchorToPlaneQuat.setFromAxisAngle(new THREE.Vector3(1,0,0), THREE.Math.DEG2RAD * -90);
-// attach to an empty game object to serve as an anchor for any child object.
+// attach to an object to anchor an object
 AFRAME.registerComponent('imagetracking', {
     schema: {
         name: { type: 'string'},
