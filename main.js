@@ -19,6 +19,10 @@ AFRAME.registerComponent('fishfoodcollection', {
         };
         this.setupEvents();
     },
+    // called whenever a component's property is updated using setAttribute
+    update: function() {
+        console.log("hello");
+    },
     // sets up the event listeners
     setupEvents: function() {
         var el = this.el;
