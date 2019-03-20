@@ -6,6 +6,7 @@ AFRAME.registerComponent('fishfoodcollection', {
     // holds variables to be called in this component
     schema: {
         colorChange: {type: 'color', default: 'green'},
+        id: {type: 'string', default: ''},
     },
     // sets up component for use
     init: function() {
@@ -18,7 +19,7 @@ AFRAME.registerComponent('fishfoodcollection', {
             document.getElementById("fish").innerHTML = "FF: " + fishFoodCount;
         };
         this.setupEvents();
-        console.log(el);
+        console.log(data.id);
     },
     // sets up the event listeners
     setupEvents: function() {
@@ -71,7 +72,7 @@ AFRAME.registerComponent('hover', {
 
 var imageAnchorToPlaneQuat = new THREE.Quaternion();          
 imageAnchorToPlaneQuat.setFromAxisAngle(new THREE.Vector3(1,0,0), THREE.Math.DEG2RAD * -90);
-// attach to an object to anchor an object
+// attach to an empty game object to serve as an anchor for any child object.
 AFRAME.registerComponent('imagetracking', {
     schema: {
         name: { type: 'string'},
