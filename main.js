@@ -12,6 +12,7 @@ AFRAME.registerComponent('fishfoodcollection', {
     init: function() {
         var data = this.data;
         var el = this.el;
+        this.tracker;
         // this function is called when 'mousedown' event listener is fired.
         this.cE = function() {
             el.setAttribute('material', {color: data.colorChange});
@@ -19,7 +20,7 @@ AFRAME.registerComponent('fishfoodcollection', {
             document.getElementById("fish").innerHTML = "FF: " + fishFoodCount;
         };
         this.setupEvents();
-        var tracker = document.querySelector('#' + data.id);
+        if(data.id) this.tracker = document.querySelector('#' + data.id);
         console.log(tracker);
     },
     // sets up the event listeners
