@@ -6,13 +6,13 @@ AFRAME.registerComponent('fishfoodcollection', {
     // holds variables to be called in this component
     schema: {
         colorChange: {type: 'color', default: 'green'},
-        id: {type: 'string'},
+        id: {type: 'string', default: null},
     },
     // sets up component for use
     init: function() {
         var data = this.data;
         var el = this.el;
-        this.tracker;
+        this.tracker = null;
         // this function is called when 'mousedown' event listener is fired.
         this.cE = function() {
             el.setAttribute('material', {color: data.colorChange});
@@ -20,7 +20,7 @@ AFRAME.registerComponent('fishfoodcollection', {
             document.getElementById("fish").innerHTML = "FF: " + fishFoodCount;
         };
         this.setupEvents();
-        this.tracker = document.querySelector('#tracker');
+        if(id != null) this.tracker = document.querySelector('#' + data.id);
         console.log(this.tracker);
     },
     // sets up the event listeners
