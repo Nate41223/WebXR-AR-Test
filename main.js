@@ -123,7 +123,8 @@ AFRAME.registerComponent('imagetracking', {
                     if (!this.el.getAttribute('visible')) {
                         this.el.setAttribute('visible', true);
                         this.el.emit('imageanchor', {anchor: anchors[i]});
-                        this.el.emit('imagetracking',{tracker: this.el});
+                        this.el.emit('imagetracking');
+                        
                     } else {
                         this.el.emit('imageanchorupdate', {anchor: anchors[i]});
                     } 
