@@ -13,34 +13,41 @@ AFRAME.registerComponent('fishfoodcollection', {
         var data = this.data;
         var el = this.el;
         this.tracker = null;
+        this.activeEvent = false;
         // this function is called when 'mousedown' event listener is fired.
         this.cE = function() {
             el.setAttribute('material', {color: data.colorChange});
             fishFoodCount++;
             document.getElementById("fish").innerHTML = "FF: " + fishFoodCount;
         };
-        this.setupEvents();
-        console.log(data.id);
         if(data.id != null) this.tracker = document.querySelector('#' + data.id);
-        console.log(this.tracker);
-        if(this.tracker != null) console.log(this.tracker.getAttribute('visible'));
-        console.log(el.getAttribute('visible'));
+        if(this.tracker == null) this.setupEvents();
     },
 
     tick: function() {
-        if(this.tracker != null) console.log(this.tracker.getAttribute('visible'));
+        if(this.tracker != null && this.tracker.getAttribute('visible') == true) {
+            if(this.activeEvent == false) setupEvents();
+        } else if (this.tracker != null && this.tracker.getAttribute('visible') == false) {
+            if(this.activeEvent == true) removeEvents();
+        }
     },
     // sets up the event listeners
     setupEvents: function() {
         var el = this.el;
 
         el.addEventListener('mousedown', this.cE);
+        this.activeEvent = true;
     },
-    // this is called when an object with this component is removed.
-    remove: function() {
+    // removes the event listeners
+    removeEvents: function() {
         var el = this.el;
 
         el.removeEventListener('mousedown', this.cE);
+        this.activeEvent = false;
+    },
+    // this is called when an object with this component is removed.
+    remove: function() {
+        removeEvents();
     },
 });
 
