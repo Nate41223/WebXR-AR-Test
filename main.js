@@ -20,7 +20,8 @@ AFRAME.registerComponent('fishfoodcollection', {
             document.getElementById("fish").innerHTML = "FF: " + fishFoodCount;
         };
         this.setupEvents();
-        if(id != null) this.tracker = document.querySelector('#' + data.id);
+        console.log(data.id);
+        if(data.id != null) this.tracker = document.querySelector('#' + data.id);
         console.log(this.tracker);
     },
     // sets up the event listeners
