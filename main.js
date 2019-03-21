@@ -26,6 +26,10 @@ AFRAME.registerComponent('fishfoodcollection', {
         if(this.tracker != null) console.log(this.tracker.getAttribute('visible'));
         console.log(el.getAttribute('visible'));
     },
+
+    tick: function() {
+        if(this.tracker != null) console.log(this.tracker.getAttribute('visible'));
+    },
     // sets up the event listeners
     setupEvents: function() {
         var el = this.el;
