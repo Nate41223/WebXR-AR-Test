@@ -23,6 +23,7 @@ AFRAME.registerComponent('fishfoodcollection', {
         console.log(data.id);
         if(data.id != null) this.tracker = document.querySelector('#' + data.id);
         console.log(this.tracker);
+        console.log(this.tracker.getAttribute('visible'));
     },
     // sets up the event listeners
     setupEvents: function() {
