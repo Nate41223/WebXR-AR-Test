@@ -22,13 +22,25 @@ h2 {
 }
 
 #fishinfo {
-    width: 100px;
-    top: 10px;
-    position: relative;
-    float: bottom;
+    width: 0% 10%;
+    height: 200px;
+    bottom: 0px;
+    width: -webkit-fill-available;
+    position: absolute;
     background-color: black;
+
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #fishdata {
+    color: white;
+    margin: 10% 3%;
+}
 
+#fishname {
+    color: white;
+    margin: 0% 3%;
+    text-align: center;
 }
