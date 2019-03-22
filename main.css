@@ -20,7 +20,7 @@ h2 {
 #ff {
     margin: 10px 0px;
 }
-
+/* switch display between 'display: none;' and 'display: inline-flex;' for hiding and showing info*/
 #fishinfo {
     margin: 0% 10%;
     height: 200px;
