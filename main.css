@@ -17,6 +17,18 @@ h2 {
     background-color: black;
 }
 
-#fish {
+#ff {
     margin: 10px 0px;
+}
+
+#fishinfo {
+    width: 100px;
+    top: 10px;
+    position: relative;
+    float: bottom;
+    background-color: black;
+}
+
+#fishdata {
+
 }

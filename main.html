@@ -14,11 +14,18 @@
     <body>
         <!-- element used for testing purposes only, I have been using it to tell when the code has been updated for testing -->
         <div id= "testing">
-            <h2> Hello8 </h2>
+            <h2> Hello9 </h2>
         </div>
         <!-- element used for tracking fish food -->
         <div id="ffh">
-            <h2 id="fish">FF: <script>document.write(fishFoodCount)</script></h2>
+            <h2 id="ff">FF: <script>document.write(fishFoodCount)</script></h2>
+        </div>
+        <!-- element used for displaying fish info -->
+        <div id="fishinfo">
+            <h3 id="fishdata">Fish Name</h3>
+            <h3 id="fishdata">Age:</h3>
+            <h3 id="fishdata">Weight:</h3>
+            <h3 id="fishdata">Length:</h3>
         </div>
         <!-- sets up ar scene with a cursor -->
         <a-scene ar="worldSensing: true" cursor="rayOrigin: mouse">
