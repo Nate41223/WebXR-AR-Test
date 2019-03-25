@@ -60,6 +60,7 @@ var showFishData = function () {
     document.getElementById("fweight").innerHTML = fishWeight;
     document.getElementById("flength").innerHTML = fishLength;
     document.getElementById("fishinfo").style.display = 'inline-flex';
+    console.log('why');
 };
 var hideFishData = function () {
     document.getElementById("fname").innerHTML = '';
@@ -114,6 +115,7 @@ AFRAME.registerComponent('fish', {
         data.age = chosenFish.age;
         data.weight = chosenFish.weight;
         data.length = chosenFish.length;
+        console.log('hello');
         showFishData();
     },
     setupEvents: function() {
