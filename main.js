@@ -77,7 +77,7 @@ AFRAME.registerComponent('fish', {
         this.cFN = function() {
             self.updateFishData();
         };
-        console.log(fish.length);
+        console.log(Object.keys(fish).length);
 
         this.setupEvents();
     },
