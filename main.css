@@ -29,7 +29,7 @@ h2 {
     position: absolute;
     background-color: black;
 
-    display: inline-flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
 }
