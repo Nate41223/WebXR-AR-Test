@@ -47,3 +47,16 @@ AFRAME.registerPrimitive('a-texttest', {
         z: 'position.z',
     },
 });
+
+AFRAME.registerPrimitive('a-fish', {
+    defaultComponents: {
+        geometry: {primitive: 'sphere', radius: .25},
+        material: {color: 'white'},
+        position: {x:0, y:0, z:0},
+    },
+    mappings: {
+        x: 'position.x',
+        y: 'position.y',
+        z: 'position.z',
+    },
+});

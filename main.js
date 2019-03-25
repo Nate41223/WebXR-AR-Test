@@ -33,21 +33,45 @@ AFRAME.registerComponent('fishfoodcollection', {
     },
     // sets up the event listeners
     setupEvents: function() {
-        var el = this.el;
-
-        el.addEventListener('mousedown', this.cE);
+        this.el.addEventListener('mousedown', this.cE);
         this.activeEvent = true;
     },
     // removes the event listeners
     removeEvents: function() {
-        var el = this.el;
-
-        el.removeEventListener('mousedown', this.cE);
+        this.el.removeEventListener('mousedown', this.cE);
         this.activeEvent = false;
     },
     // this is called when an object with this component is removed.
     remove: function() {
         removeEvents();
+    },
+});
+
+var fishName = 'Fish Name';
+var fishAge = 'Age:';
+var fishWeight = 'Weight:';
+var fishLength = 'Length:';
+
+AFRAME.registerComponent('fish', {
+    schema: {
+
+    },
+    init: function() {
+        this.name = 'Bob';
+        this.age = 42;
+        this.weight = 319.54;
+        this.length = 67;
+        this.cFN = function() {
+
+        };
+
+        this.setupEvents();
+    },
+    setupEvents: function() {
+        this.el.addEventListener('mousedown', this.cFN);
+    },
+    remove: function() {
+        this.el.removeEventListener('mousedown', this.cFN);
     },
 });
 
@@ -77,7 +101,7 @@ AFRAME.registerComponent('hover', {
         el.addEventListener('click', this.cFN);
     },
     // this is called when an object with this component is removed.
-    remove: function () {
+    remove: function() {
         var el = this.el;
 
         el.removeEventListener('mouseenter', this.meFN);
