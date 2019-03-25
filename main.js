@@ -57,6 +57,8 @@ AFRAME.registerComponent('fish', {
 
     },
     init: function() {
+        var data = this.data;
+        var el = this.el;
         this.name = 'Bob';
         this.age = 42;
         this.weight = 319.54;
@@ -72,6 +74,7 @@ AFRAME.registerComponent('fish', {
             document.getElementById("fage").innerHTML = fishAge;
             document.getElementById("fweight").innerHTML = fishWeight;
             document.getElementById("flength").innerHTML = fishLength;
+            this.updateFishData();
         };
 
         this.setupEvents();
