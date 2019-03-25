@@ -105,7 +105,7 @@ AFRAME.registerComponent('fish', {
         fishAge = 'Age: ' + data.age;
         fishWeight = 'Weight: ' + data.weight + "kg";
         fishLength = 'Length: '+ data.length + "m";
-        
+        showFishData();
         selectedFish = el;
     },
     setupValues: function(chosenFish) {
@@ -115,8 +115,6 @@ AFRAME.registerComponent('fish', {
         data.age = chosenFish.age;
         data.weight = chosenFish.weight;
         data.length = chosenFish.length;
-        console.log('hello');
-        showFishData();
     },
     setupEvents: function() {
         this.el.addEventListener('mousedown', this.cFN);
