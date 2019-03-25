@@ -63,22 +63,21 @@ var fish = {
 
 AFRAME.registerComponent('fish', {
     schema: {
-        name: {type: 'string', default: 'Sue'},
-        age: {type: 'int', default: 42},
-        weight: {type: 'float', default: 319.54},
-        length: {type: 'int', default: 67},
+        name: {type: 'string'},
+        age: {type: 'int'},
+        weight: {type: 'float'},
+        length: {type: 'int'},
 
     },
     init: function() {
         var data = this.data;
         var el = this.el;
         var self = this;
-        var fishType = fish[Math.floor(Math.random() * Object.keys(fish).length) + 1];
+        var fishNum = fish[Math.floor(Math.random() * Object.keys(fish).length) + 1];
         this.cFN = function() {
             self.updateFishData();
         };
-        console.log(fishType);
-        this.setupValues(fishType);
+        this.setupValues(fishNum);
         this.setupEvents();
     },
     updateFishData: function() {
