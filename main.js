@@ -67,6 +67,10 @@ AFRAME.registerComponent('fish', {
 
         this.setupEvents();
     },
+    updateFishData: function() {
+        //document.getElementById("ff").innerHTML = "FF: " + fishFoodCount;
+        //document.getElementByClassName("").innerHTML
+    },
     setupEvents: function() {
         this.el.addEventListener('mousedown', this.cFN);
     },

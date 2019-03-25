@@ -50,7 +50,7 @@ AFRAME.registerPrimitive('a-texttest', {
 
 AFRAME.registerPrimitive('a-fish', {
     defaultComponents: {
-        geometry: {primitive: 'sphere', radius: .25},
+        geometry: {primitive: 'sphere', radius: .1},
         material: {color: 'white'},
         position: {x:0, y:0, z:0},
     },
