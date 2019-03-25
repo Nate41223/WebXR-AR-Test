@@ -54,14 +54,15 @@ var fishLength = 'Length:';
 // holds the reference of the currently selected fish
 var selectedFish;
 
+// called when player clicks on a fish
 var showFishData = function () {
     document.getElementById("fname").innerHTML = fishName;
     document.getElementById("fage").innerHTML = fishAge;
     document.getElementById("fweight").innerHTML = fishWeight;
     document.getElementById("flength").innerHTML = fishLength;
     document.getElementById("fishinfo").style.display = 'inline-flex';
-    console.log('why');
 };
+// called when player releases fish
 var hideFishData = function () {
     document.getElementById("fname").innerHTML = '';
     document.getElementById("fage").innerHTML = '';
