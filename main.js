@@ -54,6 +54,7 @@ var fishLength = 'Length:';
 
 AFRAME.registerComponent('fish', {
     schema: {
+        fname: {type: 'string', default: 'Sue'},
 
     },
     init: function() {
@@ -66,6 +67,9 @@ AFRAME.registerComponent('fish', {
         this.cFN = function() {
             console.log(name);
             console.log(fishName);
+            console.log(data.fname);
+            data.fname = 'Robert';
+            console.log(data.fname);
             fishName = this.name;
             fishAge = 'Age: ' + this.age;
             fishWeight = 'Weight: ' + this.weight;
@@ -74,7 +78,6 @@ AFRAME.registerComponent('fish', {
             document.getElementById("fage").innerHTML = fishAge;
             document.getElementById("fweight").innerHTML = fishWeight;
             document.getElementById("flength").innerHTML = fishLength;
-            data.updateFishData();
         };
 
         this.setupEvents();
