@@ -57,7 +57,7 @@ var fish = {
     '2':{'name':'Robert', 'age':37, 'weight':215.95, 'length':48},
     '3':{'name':'Bill', 'age':25, 'weight':118.48, 'length':27},
     '4':{'name':'John', 'age':56, 'weight':340.27, 'length':70},
-    '5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
+    'f5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
 }
 
 AFRAME.registerComponent('fish', {
@@ -78,6 +78,7 @@ AFRAME.registerComponent('fish', {
         var num = 2;
         console.log(fish[num]);
         console.log(fish[2]);
+        console.log(fish.f5);
 
         this.setupEvents();
     },
