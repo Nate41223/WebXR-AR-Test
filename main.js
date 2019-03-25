@@ -18,7 +18,7 @@ AFRAME.registerComponent('fishfoodcollection', {
         this.cE = function() {
             el.setAttribute('material', {color: data.colorChange});
             fishFoodCount++;
-            document.getElementById("fish").innerHTML = "FF: " + fishFoodCount;
+            document.getElementById("ff").innerHTML = "FF: " + fishFoodCount;
         };
         if(data.id != null) this.tracker = document.querySelector('#' + data.id);
         if(this.tracker == null) this.setupEvents();
