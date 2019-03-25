@@ -69,12 +69,13 @@ AFRAME.registerComponent('fish', {
     },
     updateFishData: function() {
         fishName = this.name;
-        fishAge = this.age;
-        fishWeight = this.weight;
-        fishLength = this.length;
+        fishAge = 'Age: ' + this.age;
+        fishWeight = 'Weight: ' + this.weight;
+        fishLength = 'Length: '+ this.length;
+        document.getElementById("fname").innerHTML = fishAge;
         document.getElementById("fage").innerHTML = fishAge;
-        document.getElementById("fWeight").innerHTML = fishWeight;
-        document.getElementById("fLength").innerHTML = fishLength;
+        document.getElementById("fweight").innerHTML = fishWeight;
+        document.getElementById("flength").innerHTML = fishLength;
     },
     setupEvents: function() {
         this.el.addEventListener('mousedown', this.cFN);
