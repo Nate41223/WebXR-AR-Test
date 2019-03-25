@@ -52,12 +52,13 @@ var fishAge = 'Age:';
 var fishWeight = 'Weight:';
 var fishLength = 'Length:';
 
+// if Key is number use fish[number], if it is a string use fish.string
 var fish = {
     '1':{'name':'Sue', 'age':42, 'weight':319.54, 'length':67},
     '2':{'name':'Robert', 'age':37, 'weight':215.95, 'length':48},
     '3':{'name':'Bill', 'age':25, 'weight':118.48, 'length':27},
     '4':{'name':'John', 'age':56, 'weight':340.27, 'length':70},
-    'f5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
+    '5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
 }
 
 AFRAME.registerComponent('fish', {
@@ -72,13 +73,11 @@ AFRAME.registerComponent('fish', {
         var data = this.data;
         var el = this.el;
         var self = this;
+        var fishType = Math.floor(Math.random * fish.length) + 1;
         this.cFN = function() {
             self.updateFishData();
         };
-        var num = 2;
-        console.log(fish[num]);
-        console.log(fish[2]);
-        console.log(fish.f5);
+        console.log(fish.length);
 
         this.setupEvents();
     },
