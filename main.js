@@ -51,7 +51,23 @@ var fishName = 'Fish Name';
 var fishAge = 'Age:';
 var fishWeight = 'Weight:';
 var fishLength = 'Length:';
+// holds the reference of the currently selected fish
 var selectedFish;
+
+var showFishData = function () {
+    document.getElementById("fname").innerHTML = fishName;
+    document.getElementById("fage").innerHTML = fishAge;
+    document.getElementById("fweight").innerHTML = fishWeight;
+    document.getElementById("flength").innerHTML = fishLength;
+    document.getElementById("fishinfo").style.display = 'inline-flex';
+};
+var hideFishData = function () {
+    document.getElementById("fname").innerHTML = '';
+    document.getElementById("fage").innerHTML = '';
+    document.getElementById("fweight").innerHTML = '';
+    document.getElementById("flength").innerHTML = '';
+    document.getElementById("fishinfo").style.display = 'none';
+};
 
 // if Key is number use fish[number], if it is a string use fish.string
 var fish = {
@@ -61,7 +77,7 @@ var fish = {
     '4':{'name':'John', 'age':56, 'weight':340.27, 'length':70},
     '5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
 }
-
+// attach to any object you want to be a fish
 AFRAME.registerComponent('fish', {
     schema: {
         name: {type: 'string'},
@@ -80,12 +96,6 @@ AFRAME.registerComponent('fish', {
         this.setupValues(fishNum);
         this.setupEvents();
     },
-    tick: function() {
-        var el = this.el;
-        if (el == selectedFish) {
-            console.log('true');
-        }
-    },
     updateFishData: function() {
         var data = this.data;
         var el = this.el;
@@ -94,11 +104,7 @@ AFRAME.registerComponent('fish', {
         fishAge = 'Age: ' + data.age;
         fishWeight = 'Weight: ' + data.weight + "kg";
         fishLength = 'Length: '+ data.length + "m";
-        document.getElementById("fname").innerHTML = fishName;
-        document.getElementById("fage").innerHTML = fishAge;
-        document.getElementById("fweight").innerHTML = fishWeight;
-        document.getElementById("flength").innerHTML = fishLength;
-        document.getElementById("fishinfo").style.display = 'inline-flex';
+        
         selectedFish = el;
     },
     setupValues: function(chosenFish) {
@@ -108,6 +114,7 @@ AFRAME.registerComponent('fish', {
         data.age = chosenFish.age;
         data.weight = chosenFish.weight;
         data.length = chosenFish.length;
+        showFishData();
     },
     setupEvents: function() {
         this.el.addEventListener('mousedown', this.cFN);
