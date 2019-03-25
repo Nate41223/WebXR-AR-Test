@@ -74,7 +74,7 @@ AFRAME.registerComponent('fish', {
             document.getElementById("fage").innerHTML = fishAge;
             document.getElementById("fweight").innerHTML = fishWeight;
             document.getElementById("flength").innerHTML = fishLength;
-            this.updateFishData();
+            data.updateFishData();
         };
 
         this.setupEvents();
