@@ -78,7 +78,7 @@ AFRAME.registerComponent('fish', {
             self.updateFishData();
         };
         console.log(fishType);
-
+        this.setupValues(fishType);
         this.setupEvents();
     },
     updateFishData: function() {
@@ -93,6 +93,14 @@ AFRAME.registerComponent('fish', {
         document.getElementById("fweight").innerHTML = fishWeight;
         document.getElementById("flength").innerHTML = fishLength;
         document.getElementById("fishinfo").style.display = 'inline-flex';
+    },
+    setupValues: function(chosenFish) {
+        var data = this.data;
+        
+        data.name = chosenFish.name;
+        data.age = chosenFish.age;
+        data.weight = chosenFish.weight;
+        data.length = chosenFish.length;
     },
     setupEvents: function() {
         this.el.addEventListener('mousedown', this.cFN);
