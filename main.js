@@ -56,7 +56,7 @@ AFRAME.registerComponent('fish', {
     schema: {
         name: {type: 'string', default: 'Sue'},
         age: {type: 'int', default: 42},
-        weight: {type: 'int', default: 319.54},
+        weight: {type: 'float', default: 319.54},
         length: {type: 'int', default: 67},
 
     },
@@ -65,13 +65,10 @@ AFRAME.registerComponent('fish', {
         var el = this.el;
         var self = this;
         this.cFN = function() {
-            console.log(name);
-            console.log(fishName);
-            console.log(data.name);
             fishName = data.name;
-            fishAge = 'Age: ' + data.age;
-            fishWeight = 'Weight: ' + data.weight;
-            fishLength = 'Length: '+ data.length;
+            fishAge = 'Age: ' + data.age + "y";
+            fishWeight = 'Weight: ' + data.weight + "kg";
+            fishLength = 'Length: '+ data.length + "m";
             document.getElementById("fname").innerHTML = fishName;
             document.getElementById("fage").innerHTML = fishAge;
             document.getElementById("fweight").innerHTML = fishWeight;
@@ -81,11 +78,10 @@ AFRAME.registerComponent('fish', {
         this.setupEvents();
     },
     updateFishData: function() {
-        console.log("what");
-        fishName = this.name;
-        fishAge = 'Age: ' + this.age;
-        fishWeight = 'Weight: ' + this.weight;
-        fishLength = 'Length: '+ this.length;
+        fishName = data.name;
+        fishAge = 'Age: ' + data.age + "y";
+        fishWeight = 'Weight: ' + data.weight + "kg";
+        fishLength = 'Length: '+ data.length + "m";
         document.getElementById("fname").innerHTML = fishName;
         document.getElementById("fage").innerHTML = fishAge;
         document.getElementById("fweight").innerHTML = fishWeight;
