@@ -71,6 +71,8 @@ AFRAME.registerComponent('fish', {
         this.setupEvents();
     },
     updateFishData: function() {
+        var data = this.data;
+        
         fishName = data.name;
         fishAge = 'Age: ' + data.age;
         fishWeight = 'Weight: ' + data.weight + "kg";
