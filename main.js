@@ -62,7 +62,7 @@ AFRAME.registerComponent('fish', {
         this.weight = 319.54;
         this.length = 67;
         this.cFN = function() {
-            updateFishData();
+            this.updateFishData();
         };
 
         this.setupEvents();
