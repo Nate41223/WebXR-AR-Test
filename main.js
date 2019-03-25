@@ -62,7 +62,7 @@ AFRAME.registerComponent('fish', {
         this.weight = 319.54;
         this.length = 67;
         this.cFN = function() {
-            console.log(this.name);
+            console.log(name);
             console.log(fishName);
             fishName = this.name;
             fishAge = 'Age: ' + this.age;
