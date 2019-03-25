@@ -30,7 +30,6 @@ AFRAME.registerComponent('fishfoodcollection', {
         } else if (this.tracker != null && this.tracker.getAttribute('visible') == false) {
             if(this.activeEvent == true) this.removeEvents();
         }
-        console.log(selectedFish);
     },
     // sets up the event listeners
     setupEvents: function() {
@@ -80,6 +79,12 @@ AFRAME.registerComponent('fish', {
         };
         this.setupValues(fishNum);
         this.setupEvents();
+    },
+    tick: function() {
+        var el = this.el;
+        if (el == selectedFish) {
+            console.log('true');
+        }
     },
     updateFishData: function() {
         var data = this.data;
