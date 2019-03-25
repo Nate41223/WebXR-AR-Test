@@ -30,6 +30,7 @@ AFRAME.registerComponent('fishfoodcollection', {
         } else if (this.tracker != null && this.tracker.getAttribute('visible') == false) {
             if(this.activeEvent == true) this.removeEvents();
         }
+        console.log(selectedFish);
     },
     // sets up the event listeners
     setupEvents: function() {
@@ -51,6 +52,7 @@ var fishName = 'Fish Name';
 var fishAge = 'Age:';
 var fishWeight = 'Weight:';
 var fishLength = 'Length:';
+var selectedFish;
 
 // if Key is number use fish[number], if it is a string use fish.string
 var fish = {
@@ -67,7 +69,6 @@ AFRAME.registerComponent('fish', {
         age: {type: 'int'},
         weight: {type: 'float'},
         length: {type: 'int'},
-
     },
     init: function() {
         var data = this.data;
@@ -77,13 +78,12 @@ AFRAME.registerComponent('fish', {
         this.cFN = function() {
             self.updateFishData();
         };
-        console.log(el);
-        console.log(self);
         this.setupValues(fishNum);
         this.setupEvents();
     },
     updateFishData: function() {
         var data = this.data;
+        var el = this.el;
 
         fishName = data.name;
         fishAge = 'Age: ' + data.age;
@@ -94,6 +94,7 @@ AFRAME.registerComponent('fish', {
         document.getElementById("fweight").innerHTML = fishWeight;
         document.getElementById("flength").innerHTML = fishLength;
         document.getElementById("fishinfo").style.display = 'inline-flex';
+        selectedFish = el;
     },
     setupValues: function(chosenFish) {
         var data = this.data;
