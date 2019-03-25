@@ -52,6 +52,14 @@ var fishAge = 'Age:';
 var fishWeight = 'Weight:';
 var fishLength = 'Length:';
 
+var fish = {
+    '1':{'name':'Sue', 'age':42, 'weight':319.54, 'length':67},
+    '2':{'name':'Robert', 'age':37, 'weight':215.95, 'length':48},
+    '3':{'name':'Bill', 'age':25, 'weight':118.48, 'length':27},
+    '4':{'name':'John', 'age':56, 'weight':340.27, 'length':70},
+    '5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
+}
+
 AFRAME.registerComponent('fish', {
     schema: {
         name: {type: 'string', default: 'Sue'},
@@ -67,6 +75,9 @@ AFRAME.registerComponent('fish', {
         this.cFN = function() {
             self.updateFishData();
         };
+        var num = 2;
+        console.log(fish[num]);
+        console.log(fish[2]);
 
         this.setupEvents();
     },
