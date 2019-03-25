@@ -78,10 +78,10 @@ AFRAME.registerComponent('fish', {
         document.getElementById("flength").innerHTML = fishLength;
     },
     setupEvents: function() {
-        this.el.addEventListener('mousedown', this.cFN);
+        this.el.addEventListener('mousedown', this.updateFishData());
     },
     remove: function() {
-        this.el.removeEventListener('mousedown', this.cFN);
+        this.el.removeEventListener('mousedown', this.cFN.updateFishData());
     },
 });
 
