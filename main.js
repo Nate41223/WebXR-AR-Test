@@ -79,7 +79,7 @@ AFRAME.registerComponent('fish', {
         this.el.addEventListener('mousedown', this.updateFishData());
     },
     remove: function() {
-        this.el.removeEventListener('mousedown', this.cFN.updateFishData());
+        this.el.removeEventListener('mousedown', this.updateFishData());
     },
 });
 
