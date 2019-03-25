@@ -73,7 +73,7 @@ AFRAME.registerComponent('fish', {
         var data = this.data;
         var el = this.el;
         var self = this;
-        var fishType = Math.floor(Math.random() * Object.keys(fish).length) + 1;
+        var fishType = fish[Math.floor(Math.random() * Object.keys(fish).length) + 1];
         this.cFN = function() {
             self.updateFishData();
         };
