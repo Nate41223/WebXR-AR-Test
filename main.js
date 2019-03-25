@@ -61,6 +61,17 @@ AFRAME.registerComponent('fish', {
         this.age = 42;
         this.weight = 319.54;
         this.length = 67;
+        this.cFN = function() {
+            console.log("hey");
+            fishName = this.name;
+            fishAge = 'Age: ' + this.age;
+            fishWeight = 'Weight: ' + this.weight;
+            fishLength = 'Length: '+ this.length;
+            document.getElementById("fname").innerHTML = fishName;
+            document.getElementById("fage").innerHTML = fishAge;
+            document.getElementById("fweight").innerHTML = fishWeight;
+            document.getElementById("flength").innerHTML = fishLength;
+        };
 
         this.setupEvents();
     },
@@ -76,10 +87,10 @@ AFRAME.registerComponent('fish', {
         document.getElementById("flength").innerHTML = fishLength;
     },
     setupEvents: function() {
-        this.el.addEventListener('mousedown', this.updateFishData());
+        this.el.addEventListener('mousedown', this.cFN);
     },
     remove: function() {
-        this.el.removeEventListener('mousedown', this.updateFishData());
+        this.el.removeEventListener('mousedown', this.cFN);
     },
 });
 
