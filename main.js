@@ -82,13 +82,24 @@ AFRAME.registerComponent('hover', {
     }
 });
 
-var time = 200;
 AFRAME.registerComponent('pausetest', {
+    init: function() {
+        this.time = 200;
+        this.isMoving = true;
+    },
     tick: function() {
         var el = this.el;
-        time--;
+        this.time--;
         if (time <= 0) {
-            el.pause();
+            if (this.isMoving) {
+                el.pause();
+                this.isMoving = false;
+            } else {
+                el.play();
+                this.isMoving = true;
+            }
+            this.time = 200;
         };
+        console.log(this.time);
     },
 })
