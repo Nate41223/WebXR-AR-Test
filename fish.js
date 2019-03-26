@@ -54,8 +54,6 @@ AFRAME.registerComponent('fish', {
         };
         this.setupValues(fishNum);
         this.setupEvents();
-        console.log(holdingSpot);
-        console.log(fishholder);
     },
     updateFishData: function() {
         var data = this.data;
@@ -67,7 +65,7 @@ AFRAME.registerComponent('fish', {
         fishLength = 'Length: '+ data.length + "m";
         showFishData();
         selectedFish = el;
-        console.log(this.fishholder);
+        console.log(holdingSpot);
     },
     setupValues: function(chosenFish) {
         var data = this.data;
