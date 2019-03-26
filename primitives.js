@@ -10,6 +10,7 @@ AFRAME.registerPrimitive('a-boxtest', {
         x: 'position.x',
         y: 'position.y',
         z: 'position.z',
+        color: 'material.color',
     },
 });
 // basic plane creation
