@@ -30,6 +30,9 @@ var fish = {
     '4':{'name':'John', 'age':56, 'weight':340.27, 'length':70},
     '5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
 }
+// reference to the holding spot of the fish
+var holdingSpot = document.getElementById('fishhold');
+
 // attach to any object you want to be a fish
 AFRAME.registerComponent('fish', {
     schema: {
@@ -42,7 +45,7 @@ AFRAME.registerComponent('fish', {
         var data = this.data;
         var el = this.el;
         var self = this;
-        var holdingSpot = document.getElementById('fishhold');
+        
         var fishNum = fish[Math.floor(Math.random() * Object.keys(fish).length) + 1];
         this.cFN = function() {
             self.updateFishData();

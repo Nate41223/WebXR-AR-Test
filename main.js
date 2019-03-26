@@ -102,6 +102,6 @@ AFRAME.registerComponent('pausetest', {
             }
             this.time = 200;
         };
-        console.log(this.time);
+        //console.log(this.time);
     },
 })
