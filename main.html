@@ -16,7 +16,7 @@
     <body>
         <!-- element used for testing purposes only, I have been using it to tell when the code has been updated for testing -->
         <div id= "testing">
-            <h2> Hello6 </h2>
+            <h2> Hello7 </h2>
         </div>
         <!-- element used for tracking fish food -->
         <div id="ffh">
@@ -62,6 +62,11 @@
             <!-- fish test -->
             <a-fish fish x='-.5' y='0' z='-.5'></a-fish>
             <a-fish fish x='.5' y='0' z='-.5'></a-fish>
+
+            <a-boxtest x='1' y='.5' z='-1'>
+                <a-animation attribute="position" from="1 .5 -1" to="-1 .5 -1" dur="1000" direction="normal" startEvents='click'></a-animation>
+            </a-boxtest>
+
             <a-camera>
                 <a-entity id="fishhold" position="0 .02 -.1"></a-entity>
                 <a-fish z='-.1' y='.02' radius='.01' color='green'></a-fish>
