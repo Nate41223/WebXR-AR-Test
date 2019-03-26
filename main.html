@@ -63,11 +63,11 @@
             <!-- fish test -->
             <a-fish fish x='-.5' y='0' z='-.5'></a-fish>
             <a-fish fish x='.5' y='0' z='-.5'></a-fish>
-            <!-- animation event test using a-animation-->
+            <!-- animation event test using a-animation -->
             <a-boxtest x='1' y='.5' z='-1'>
                 <a-animation attribute="position" from="1 .5 -1" to="-1 .5 -1" dur="1000" direction="normal" begin='click'></a-animation>
             </a-boxtest>
-            <!-- animation event test using animation component-->
+            <!-- animation event test using animation component -->
             <a-boxtest color='yellow' x='1' y='.6' z='-1' animation="
                                                             property: position;
                                                             from: 1 .6 -1;
@@ -77,7 +77,7 @@
                                                             startEvents: click;
                                                             ">
             </a-boxtest>
-
+            <!-- camera used for the scene -->
             <a-camera>
                 <a-entity id="fishhold" position="0 .02 -.1"></a-entity>
                 <a-fish z='-.1' y='.02' radius='.01' color='green'></a-fish>
