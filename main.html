@@ -9,12 +9,14 @@
         <script src="https://cdn.jsdelivr.net/gh/chenzlabs/aframe-ar@master/dist/aframe-ar.js"></script>
         <script src="main.js"></script>
         <script src="primitives.js"></script>
+        <script src="fish.js"></script>
+        <script src="tracking.js"></script>
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
         <!-- element used for testing purposes only, I have been using it to tell when the code has been updated for testing -->
         <div id= "testing">
-            <h2> Hello3 </h2>
+            <h2> Hello4 </h2>
         </div>
         <!-- element used for tracking fish food -->
         <div id="ffh">
@@ -29,6 +31,7 @@
         </div>
         <!-- sets up ar scene with a cursor -->
         <a-scene ar="worldSensing: true" cursor="rayOrigin: mouse">
+            <!-- tests image tracking -->
             <a-entity id="tracker" imagetracking="
                                     name:painting;
                                     src:./TestImages/Painting_2_Fish_Food.png;
@@ -38,25 +41,25 @@
                         <a-animation attribute="rotation" to="0 360 0" direction="alternate" dur="2000" repeat ="indefinite"></a-animation>
                 </a-boxtest>
             </a-entity>
-
+            <!-- original box test with interaction and animation -->
             <a-box scale="0.25 0.25 0.25" position="1 0 0" rotation="0 0 0" color="#4CC3D9" hover shadow>
                 <a-animation attribute="rotation" to="0 360 0" direction="alternate" dur="2000" repeat ="indefinite"></a-animation>
             </a-box>
-
+            <!-- tests orbiting animation -->
             <a-entity rotation="0 0 0">
                 <a-animation attribute="rotation" to="0 360 0" direction="normal" dur="10000" repeat="indefinite" easing="linear"></a-animation>
                 <a-entity geometry="primitive: sphere; radius: .05;" material="color: blue;"position="2 0 0"></a-entity>
             </a-entity>
-
+            <!-- text tests -->
             <a-texttest t="Hello World" x='0' y='0' z='-.5'></a-texttest>
             <a-texttest t='Hello World' x='0' y='0' z='-.8'></a-texttest>
-
+            <!-- parenting test -->
             <a-planetest>
                 <a-texttest></a-texttest>
             </a-planetest>
-
+            <!-- food collection test -->
             <a-boxtest fishfoodcollection x='0' y='0' z='-1'></a-boxtest>
-
+            <!-- fish test -->
             <a-fish fish x='-.5' y='0' z='-.5'></a-fish>
             <a-fish fish x='.5' y='0' z='-.5'></a-fish>
             <!-- used to preload objects -->
