@@ -32,7 +32,7 @@ var fish = {
 }
 // reference to the holding spot of the fish
 var sceneEl = document.querySelector('a-scene');
-var holdingSpot = sceneEl.querySelector('#fishhold');
+//var holdingSpot = sceneEl.querySelector('#fishhold');
 
 // attach to any object you want to be a fish
 AFRAME.registerComponent('fish', {
