@@ -58,5 +58,7 @@ AFRAME.registerPrimitive('a-fish', {
         x: 'position.x',
         y: 'position.y',
         z: 'position.z',
+        color: 'material.color',
+        radius: 'geometry.radius',
     },
 });
