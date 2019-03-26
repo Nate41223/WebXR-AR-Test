@@ -31,8 +31,8 @@ var fish = {
     '5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
 }
 // reference to the holding spot of the fish
-var sceneEl = document.querySelector('a-scene');
-//var holdingSpot = sceneEl.querySelector('#fishhold');
+//var sceneEl = document.querySelector('a-scene');
+var holdingSpot = document.querySelector('#fishhold');
 
 // attach to any object you want to be a fish
 AFRAME.registerComponent('fish', {
@@ -46,6 +46,7 @@ AFRAME.registerComponent('fish', {
         var data = this.data;
         var el = this.el;
         var self = this;
+        this.fishholder = document.querySelector("#fishhold");
         
         var fishNum = fish[Math.floor(Math.random() * Object.keys(fish).length) + 1];
         this.cFN = function() {
@@ -53,7 +54,8 @@ AFRAME.registerComponent('fish', {
         };
         this.setupValues(fishNum);
         this.setupEvents();
-        console.log(sceneEl);
+        console.log(holdingSpot);
+        console.log(fishholder);
     },
     updateFishData: function() {
         var data = this.data;
@@ -65,6 +67,7 @@ AFRAME.registerComponent('fish', {
         fishLength = 'Length: '+ data.length + "m";
         showFishData();
         selectedFish = el;
+        console.log(this.fishholder);
     },
     setupValues: function(chosenFish) {
         var data = this.data;
