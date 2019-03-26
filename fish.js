@@ -30,9 +30,6 @@ var fish = {
     '4':{'name':'John', 'age':56, 'weight':340.27, 'length':70},
     '5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
 }
-// reference to the holding spot of the fish
-//var sceneEl = document.querySelector('a-scene');
-var holdingSpot = document.querySelector('#fishhold');
 
 // attach to any object you want to be a fish
 AFRAME.registerComponent('fish', {
@@ -65,7 +62,7 @@ AFRAME.registerComponent('fish', {
         fishLength = 'Length: '+ data.length + "m";
         showFishData();
         selectedFish = el;
-        console.log(holdingSpot);
+        console.log(this.fishholder);
     },
     setupValues: function(chosenFish) {
         var data = this.data;
