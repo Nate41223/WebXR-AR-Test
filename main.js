@@ -82,6 +82,8 @@ AFRAME.registerComponent('hover', {
     }
 });
 
+// used to test the effects of pausing an entity
+// pausing an entity ends up pausing the tick function as well as seen through this example.
 AFRAME.registerComponent('pausetest', {
     init: function() {
         this.time = 200;
