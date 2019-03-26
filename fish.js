@@ -31,7 +31,7 @@ var fish = {
     '5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
 }
 // reference to the holding spot of the fish
-var holdingSpot = document.getElementById('fishhold').el;
+var holdingSpot = document.getElementById('fishhold').Object;
 
 // attach to any object you want to be a fish
 AFRAME.registerComponent('fish', {
