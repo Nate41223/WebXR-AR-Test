@@ -90,7 +90,7 @@ AFRAME.registerComponent('pausetest', {
     tick: function() {
         var el = this.el;
         this.time--;
-        if (time <= 0) {
+        if (this.time <= 0) {
             if (this.isMoving) {
                 el.pause();
                 this.isMoving = false;
