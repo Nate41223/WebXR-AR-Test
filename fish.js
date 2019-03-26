@@ -42,12 +42,14 @@ AFRAME.registerComponent('fish', {
         var data = this.data;
         var el = this.el;
         var self = this;
+        var holdingSpot = document.getElementById('fishhold');
         var fishNum = fish[Math.floor(Math.random() * Object.keys(fish).length) + 1];
         this.cFN = function() {
             self.updateFishData();
         };
         this.setupValues(fishNum);
         this.setupEvents();
+        console.log(holdingSpot);
     },
     updateFishData: function() {
         var data = this.data;
