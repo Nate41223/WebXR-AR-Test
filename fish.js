@@ -31,6 +31,9 @@ var fish = {
     '5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
 }
 
+var sceneEl = document.querySelector('a-scene');
+var fishhold = sceneEl.querySelector("#fishhold");
+
 // attach to any object you want to be a fish
 AFRAME.registerComponent('fish', {
     schema: {
@@ -63,6 +66,7 @@ AFRAME.registerComponent('fish', {
         showFishData();
         selectedFish = el;
         console.log(this.fishholder);
+        console.log(fishhold);
     },
     setupValues: function(chosenFish) {
         var data = this.data;
