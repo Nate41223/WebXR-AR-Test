@@ -81,3 +81,14 @@ AFRAME.registerComponent('hover', {
         el.removeEventListener('click', this.cFN);
     }
 });
+
+var time = 200;
+AFRAME.registerComponent('pausetest', {
+    tick: function() {
+        var el = this.el;
+        time--;
+        if (time <= 0) {
+            el.pause();
+        };
+    },
+})
