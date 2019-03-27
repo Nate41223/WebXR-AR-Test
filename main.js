@@ -110,17 +110,19 @@ AFRAME.registerComponent('spawntest', {
     init: function() {
         this.time = 200;
         this.isMoving = true;
+        this.child;
     },
     tick: function() {
         var el = this.el;
         this.time--;
         if (this.time <= 0) {
             if (this.isMoving) {
-                var obj = document.createElement('a-boxtest');
-                el.appendChild(obj);
+                this.child = document.createElement('a-boxtest');
+                el.appendChild(this.child);
                 this.isMoving = false;
             } else {
-                this.isMoving = true;
+                el.removeChild(this.child);
+                //this.isMoving = true;
             }
             this.time = 200;
         };
