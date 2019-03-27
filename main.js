@@ -124,7 +124,7 @@ AFRAME.registerComponent('spawntest', {
             } else {
                 el.removeChild(this.child);
                 console.log("removed child");
-                //this.isMoving = true;
+                this.isMoving = true;
             }
             this.time = 200;
         };
