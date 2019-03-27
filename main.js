@@ -105,3 +105,25 @@ AFRAME.registerComponent('pausetest', {
         //console.log(this.time);
     },
 })
+
+AFRAME.registerComponent('spawntest', {
+    init: function() {
+        this.time = 200;
+        this.isMoving = true;
+    },
+    tick: function() {
+        var el = this.el;
+        this.time--;
+        if (this.time <= 0) {
+            if (this.isMoving) {
+                var obj = document.createElement('a-boxtest');
+                el.appendChild(obj);
+                this.isMoving = false;
+            } else {
+                this.isMoving = true;
+            }
+            this.time = 200;
+        };
+        //console.log(this.time);
+    },
+})
