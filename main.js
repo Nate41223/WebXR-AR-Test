@@ -155,9 +155,15 @@ AFRAME.registerComponent('spawntest2', {
                 this.isMoving = false;
             } else {
                 console.log(this.child);
+                // gets world pos of box and sets it when its removed so that it stays in the same spot.
                 var worldPos = new THREE.Vector3();
                 worldPos.setFromMatrixPosition(this.child.object3D.matrixWorld);
                 this.child.setAttribute('position', worldPos);
+                // gets world rot of box and sets it when its removed so that it stays the same rotation.
+                var worldRot = new THREE.Vector3();
+                worldRot.setFromMatrixRotation(this.child.object3D.matrixWorld);
+                this.child.setAttribute('rotation', worldRot);
+
                 el.sceneEl.appendChild(this.child);
                 //el.removeChild(this.child);
                 console.log("removed child");
