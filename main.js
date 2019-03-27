@@ -131,3 +131,31 @@ AFRAME.registerComponent('spawntest', {
         //console.log(this.time);
     },
 })
+
+AFRAME.registerComponent('spawntest2', {
+    init: function() {
+        this.time = 200;
+        this.isMoving = true;
+        this.child;
+        this.scene = this.sceneEl;
+    },
+    tick: function() {
+        var el = this.el;
+        this.time--;
+        if (this.time <= 0) {
+            if (this.isMoving) {
+                this.child = document.createElement('a-boxtest');
+                el.appendChild(this.child);
+                console.log("added child");
+                this.isMoving = false;
+            } else {
+                this.scene.appendChild(this.child);
+                //el.removeChild(this.child);
+                console.log("removed child");
+                this.isMoving = true;
+            }
+            this.time = 200;
+        };
+        //console.log(this.time);
+    },
+})
