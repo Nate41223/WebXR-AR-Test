@@ -145,10 +145,12 @@ AFRAME.registerComponent('spawntest2', {
         if (this.time <= 0) {
             if (this.isMoving) {
                 this.child = document.createElement('a-boxtest');
+                console.log(this.child);
                 el.appendChild(this.child);
                 console.log("added child");
                 this.isMoving = false;
             } else {
+                console.log(this.child);
                 this.scene.appendChild(this.child);
                 //el.removeChild(this.child);
                 console.log("removed child");
