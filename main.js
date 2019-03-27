@@ -160,8 +160,8 @@ AFRAME.registerComponent('spawntest2', {
                 worldPos.setFromMatrixPosition(this.child.object3D.matrixWorld);
                 this.child.setAttribute('position', worldPos);
                 // gets world rot of box and sets it when its removed so that it stays the same rotation.
-                var worldRot = new THREE.Vector3();
-                worldRot.setFromMatrixRotation(this.child.object3D.matrixWorld);
+                var worldRot = this.child.object3D.getWorldQuaternian();
+                //worldRot.setFromMatrixRotation(this.child.object3D.matrixWorld);
                 this.child.setAttribute('rotation', worldRot);
 
                 el.sceneEl.appendChild(this.child);
