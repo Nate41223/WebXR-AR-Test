@@ -158,6 +158,7 @@ AFRAME.registerComponent('spawntest2', {
                 var worldPosition = new THREE.Vector3();
                 var worldRotation = new THREE.Quaternion();
                 var worldScale = new THREE.Vector3();
+                
                 // gets world pos of box and sets it when its removed so that it stays in the same spot.
                 var worldPos = new THREE.Vector3();
                 worldPos.setFromMatrixPosition(this.child.object3D.matrixWorld);
@@ -166,8 +167,9 @@ AFRAME.registerComponent('spawntest2', {
                 var worldRot = this.child.object3D.getWorldQuaternion();
                 console.log(worldRot);
                 console.log(new THREE.Euler().setFromQuaternion( worldRot, 'XYZ' ));
+
                 //worldRot.setFromMatrixRotation(this.child.object3D.matrixWorld);
-                this.child.setAttribute('rotation', new THREE.Euler().setFromQuaternion( worldRot, 'XYZ' ));
+                this.child.setAttribute('rotation', el.getAttribute('rotation'));
 
                 el.sceneEl.appendChild(this.child);
                 //el.removeChild(this.child);
