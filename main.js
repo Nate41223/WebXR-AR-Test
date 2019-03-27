@@ -157,7 +157,7 @@ AFRAME.registerComponent('spawntest2', {
                 console.log(this.child);
                 var worldPos = new THREE.Vector3();
                 worldPos.setFromMatrixPosition(this.child.object3D.matrixWorld);
-                this.child.setAttribute(position, worldPos);
+                this.child.setAttribute('position', worldPos);
                 el.sceneEl.appendChild(this.child);
                 //el.removeChild(this.child);
                 console.log("removed child");
