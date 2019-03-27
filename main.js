@@ -155,12 +155,15 @@ AFRAME.registerComponent('spawntest2', {
                 this.isMoving = false;
             } else {
                 console.log(this.child);
+                var worldPosition = new THREE.Vector3();
+                var worldRotation = new THREE.Quaternion();
+                var worldScale = new THREE.Vector3();
                 // gets world pos of box and sets it when its removed so that it stays in the same spot.
                 var worldPos = new THREE.Vector3();
                 worldPos.setFromMatrixPosition(this.child.object3D.matrixWorld);
                 this.child.setAttribute('position', worldPos);
                 // gets world rot of box and sets it when its removed so that it stays the same rotation.
-                var worldRot = this.child.object3D.getWorldQuaternian();
+                var worldRot = this.child.object3D.getWorldQuaternion();
                 //worldRot.setFromMatrixRotation(this.child.object3D.matrixWorld);
                 this.child.setAttribute('rotation', worldRot);
 
