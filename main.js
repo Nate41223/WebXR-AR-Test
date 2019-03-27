@@ -105,7 +105,8 @@ AFRAME.registerComponent('pausetest', {
         //console.log(this.time);
     },
 })
-
+// tests adding and removing a child
+// removing a child from its parent removes it from the DOM
 AFRAME.registerComponent('spawntest', {
     init: function() {
         this.time = 200;
@@ -131,7 +132,10 @@ AFRAME.registerComponent('spawntest', {
         //console.log(this.time);
     },
 })
-
+// tests spawning and then transfering child objects to another parent
+// transfering a child component to another parent affects its location
+// an objects location data is relative not global, and is affected by each parent
+// in one example, removing the child from a spinning parent object, teleported the child object back to its starting position.
 AFRAME.registerComponent('spawntest2', {
     init: function() {
         this.time = 200;
@@ -151,6 +155,9 @@ AFRAME.registerComponent('spawntest2', {
                 this.isMoving = false;
             } else {
                 console.log(this.child);
+                var worldPos = new THREE.Vector3();
+                worldPos.setFromMatrixPosition(this.child.object3D.matrixWorld);
+                this.child.setAttribute(position, worldPos);
                 el.sceneEl.appendChild(this.child);
                 //el.removeChild(this.child);
                 console.log("removed child");
