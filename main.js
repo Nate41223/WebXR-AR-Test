@@ -119,9 +119,11 @@ AFRAME.registerComponent('spawntest', {
             if (this.isMoving) {
                 this.child = document.createElement('a-boxtest');
                 el.appendChild(this.child);
+                console.log("added child");
                 this.isMoving = false;
             } else {
                 el.removeChild(this.child);
+                console.log("removed child");
                 //this.isMoving = true;
             }
             this.time = 200;
