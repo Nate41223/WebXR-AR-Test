@@ -151,7 +151,7 @@ AFRAME.registerComponent('spawntest2', {
                 this.isMoving = false;
             } else {
                 console.log(this.child);
-                this.scene.appendChild(this.child);
+                this.sceneEl.appendChild(this.child);
                 //el.removeChild(this.child);
                 console.log("removed child");
                 this.isMoving = true;
