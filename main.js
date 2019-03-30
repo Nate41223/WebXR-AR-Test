@@ -47,6 +47,8 @@ AFRAME.registerComponent('fishfoodcollection', {
     },
 });
 
+// this is a test component for using registered components to make animations
+// this allows us to effect/change animation variables based on conditions
 AFRAME.registerComponent('slideanim', {
     schema: {
         property: {type:'string', default:'position'},
