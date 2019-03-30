@@ -50,8 +50,8 @@ AFRAME.registerComponent('fishfoodcollection', {
 AFRAME.registerComponent('slideanim', {
     schema: {
         property: {type:'string', default:'position'},
-        from: {type:'vec3', default:{x:1, y:.7, z:-1}},
-        to: {type:'vec3', default:{x:-1, y:.7, z:-1}},
+        from: {type:'string', default:'1 .7 -1'},
+        to: {type:'string', default:'-1 .7 -1'},
         dur: {type:'number', default:1000},
         dir: {type:'string', default:'normal'},
         startEvents: {type:'string', default:'click'},
@@ -61,8 +61,8 @@ AFRAME.registerComponent('slideanim', {
         var el = this.el;
         el.setAttribute('animation', {
             property: data.property,
-            from: '1 .7 -1',
-            to: '-1 .7 -1',
+            from: data.from,
+            to: data.to,
             dur: data.dur,
             dir: data.dir,
             startEvents: data.startEvents,
