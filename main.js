@@ -61,8 +61,8 @@ AFRAME.registerComponent('slideanim', {
         var el = this.el;
         el.setAttribute('animation', {
             property: data.property,
-            from: data.from,
-            to: data.to,
+            from: '1 .7 -1',
+            to: '-1 .7 -1',
             dur: data.dur,
             dir: data.dir,
             startEvents: data.startEvents,
