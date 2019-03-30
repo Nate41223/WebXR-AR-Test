@@ -47,6 +47,29 @@ AFRAME.registerComponent('fishfoodcollection', {
     },
 });
 
+AFRAME.registerComponent('slideanim', {
+    schema: {
+        property: {type:'string', default:'position'},
+        from: {type:'vec3', default:{x:1, y:.6, z:-1}},
+        to: {type:'vec3', default:{x:-1, y:.6, z:-1}},
+        dur: {type:'number', defualt:1000},
+        dir: {type:'string', default:'normal'},
+        startEvents: {type:'string', default:'click'},
+    },
+    init: function() {
+        var data = this.data;
+        var el = this.el;
+        el.setAttribute('animation', {
+            property: data.property,
+            from: data.from,
+            to: data.to,
+            dur: data.dur,
+            dir: data.dir,
+            startEvents: data.startEvents,
+        });
+    },
+});
+
 // this is a test component to see a few of the different events that you can call and how to set them up.
 AFRAME.registerComponent('hover', {
     schema: {
