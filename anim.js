@@ -68,6 +68,7 @@ AFRAME.registerComponent('fishslideto', {
         var fishpos = el.getAttribute('position');
         data.from = fishpos;
         console.log(fishpos);
+        console.log(this.fishholder);
 
         var holdpos = worldPos(this.fishholder);
         data.to = holdpos.x + " " + holdpos.y + " " + holdpos.z;
