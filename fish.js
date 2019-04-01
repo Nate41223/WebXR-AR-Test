@@ -75,6 +75,7 @@ AFRAME.registerComponent('fish', {
 
         hideFishData();
         selectedFish = null;
+        el.emit('slidefromsetup',{},true);
     },
     setupValues: function(chosenFish) {
         var data = this.data;

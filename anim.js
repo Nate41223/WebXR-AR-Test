@@ -57,18 +57,15 @@ AFRAME.registerComponent('fishslideto', {
             startEvents: data.startEvents,
         });
         this.stsFN = () => {
-            console.log(el);
-            console.log(this.el);
             //var vec3pos = worldPos(el);
             //selectedFish.setAttribute('position', vec3pos);
             //data.from = vec3pos.x + " " + vec3pos.y + " " + vec3pos.z;
             var fishpos = el.getAttribute('position');
             data.from = fishpos;
-            console.log(fishpos);
-            console.log(fishholder);
     
             var holdpos = worldPos(fishholder);
             data.to = holdpos.x + " " + holdpos.y + " " + holdpos.z;
+
             el.setAttribute('animation', {
                 from: data.from,
                 to: data.to,
@@ -81,6 +78,53 @@ AFRAME.registerComponent('fishslideto', {
     },
     remove: function() {
         this.el.removeEventListener('slidetosetup', this.stsFN);
+        console.log("ouch");
+    },
+});
+
+AFRAME.registerComponent('fishslidefrom', {
+    schema: {
+        property: {type:'string', default:'position'},
+        from: {type:'string', default:'1 .7 -1'},
+        to: {type:'string', default:'0 0 0'},
+        dur: {type:'number', default:1000},
+        dir: {type:'string', default:'normal'},
+        startEvents: {type:'string', default:'slidefrom'},
+    },
+    init: function() {
+        var data = this.data;
+        var el = this.el;
+        var fishholder = document.querySelector("#fishhold");
+        data.to = el.getAttribute('position');
+        console.log(data.to);
+
+        el.setAttribute('animation', {
+            property: data.property,
+            from: data.from,
+            to: data.to,
+            dur: data.dur,
+            dir: data.dir,
+            startEvents: data.startEvents,
+        });
+        this.stsFN = () => {
+            //var vec3pos = worldPos(el);
+            //selectedFish.setAttribute('position', vec3pos);
+            //data.from = vec3pos.x + " " + vec3pos.y + " " + vec3pos.z;
+            var fishpos = el.getAttribute('position');
+            data.from = fishpos;
+
+            el.setAttribute('animation', {
+                from: data.from,
+                to: data.to,
+            });
+    
+            el.emit('slidefrom');
+        },
+        
+        el.addEventListener('slidefromsetup', this.stsFN);
+    },
+    remove: function() {
+        this.el.removeEventListener('slidefromsetup', this.stsFN);
         console.log("ouch");
     },
 });
