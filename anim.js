@@ -95,7 +95,8 @@ AFRAME.registerComponent('fishslidefrom', {
         var data = this.data;
         var el = this.el;
         var fishholder = document.querySelector("#fishhold");
-        data.to = el.getAttribute('position');
+        origPos = el.getAttribute('position');
+        data.to = origPos.x + " " + origPos.y + " " + origPos.z;
         console.log(data.to);
 
         el.setAttribute('animation', {
