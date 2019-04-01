@@ -69,6 +69,7 @@ AFRAME.registerComponent('fish', {
         selectedFish = el;
         console.log(this.fishholder);
         this.fishholder.object3D.add(el.object3D);
+        el.flushToDOM();
         //this.fishholder.add(el);
         this.fishholder.emit('slidetosetup',{},true);
     },
