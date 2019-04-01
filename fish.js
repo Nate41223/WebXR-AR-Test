@@ -43,7 +43,7 @@ AFRAME.registerComponent('fish', {
         var data = this.data;
         var el = this.el;
         var self = this;
-        this.fishholder = document.querySelector("#fishhold");
+        //this.fishholder = document.querySelector("#fishhold");
         
         var fishNum = fish[Math.floor(Math.random() * Object.keys(fish).length) + 1];
 
@@ -67,18 +67,14 @@ AFRAME.registerComponent('fish', {
         fishLength = 'Length: '+ data.length + "m";
         showFishData();
         selectedFish = el;
-        console.log(this.fishholder);
 
-        this.fishholder.appendChild(el);
-        this.fishholder.emit('slidetosetup',{},true);
+        el.emit('slidetosetup',{},true);
     },
     clearFishData: function() {
         var el = this.el;
 
         hideFishData();
         selectedFish = null;
-
-        el.sceneEl.appendChild(el);
     },
     setupValues: function(chosenFish) {
         var data = this.data;

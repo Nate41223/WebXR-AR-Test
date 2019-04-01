@@ -46,6 +46,8 @@ AFRAME.registerComponent('fishslideto', {
     init: function() {
         var data = this.data;
         var el = this.el;
+        this.fishholder = document.querySelector("#fishhold");
+
         el.setAttribute('animation', {
             property: data.property,
             from: data.from,
@@ -55,10 +57,16 @@ AFRAME.registerComponent('fishslideto', {
             startEvents: data.startEvents,
         });
         this.stsFN = function() {
-            var vec3pos = worldPos(el);
-            selectedFish.setAttribute('position', vec3pos);
-            data.from = vec3pos.x + " " + vec3pos.y + " " + vec3pos.z;
-            console.log(data.from);
+            //var vec3pos = worldPos(el);
+            //selectedFish.setAttribute('position', vec3pos);
+            //data.from = vec3pos.x + " " + vec3pos.y + " " + vec3pos.z;
+            var fishpos = el.getAttribute('position');
+            data.from = fishpos;
+            console.log(fishpos);
+
+            var holdpos = worldPos(this.fishholder);
+            data.to = holdpos.x + " " + holdpos.y + " " + holdpos.z;
+
             el.emit('slideto');
         };
         el.addEventListener('slidetosetup', this.stsFN);
