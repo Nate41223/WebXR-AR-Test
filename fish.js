@@ -73,11 +73,11 @@ AFRAME.registerComponent('fish', {
     },
     clearFishData: function() {
         var el = this.el;
-        
+
         hideFishData();
         selectedFish = null;
 
-        el.sceneEL.appendChild(el);
+        el.sceneEl.appendChild(el);
     },
     setupValues: function(chosenFish) {
         var data = this.data;
