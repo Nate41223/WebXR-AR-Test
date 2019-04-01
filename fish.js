@@ -70,6 +70,7 @@ AFRAME.registerComponent('fish', {
         console.log(this.fishholder);
 
         this.fishholder.appendChild(el);
+        el.emit('slidetosetup');
     },
     clearFishData: function() {
         var el = this.el;
