@@ -57,7 +57,7 @@ AFRAME.registerComponent('fishslideto', {
             startEvents: data.startEvents,
         });
         
-        el.addEventListener('slidetosetup', stsFN());
+        el.addEventListener('slidetosetup', this.stsFN());
     },
     stsFN: function() {
         //var vec3pos = worldPos(el);
@@ -73,7 +73,7 @@ AFRAME.registerComponent('fishslideto', {
         el.emit('slideto');
     },
     remove: function() {
-        this.el.removeEventListener('slidetosetup', stsFN());
+        this.el.removeEventListener('slidetosetup', this.stsFN());
         console.log("ouch");
     },
 });
