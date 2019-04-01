@@ -72,6 +72,10 @@ AFRAME.registerComponent('fishslideto', {
 
         var holdpos = worldPos(this.fishholder);
         data.to = holdpos.x + " " + holdpos.y + " " + holdpos.z;
+        el.setAttribute('animation', {
+            from: data.from,
+            to: data.to,
+        });
 
         el.emit('slideto');
     },
