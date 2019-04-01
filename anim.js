@@ -46,7 +46,6 @@ AFRAME.registerComponent('fishslideto', {
     init: function() {
         var data = this.data;
         var el = this.el;
-        this.child;
         el.setAttribute('animation', {
             property: data.property,
             from: data.from,
@@ -55,11 +54,9 @@ AFRAME.registerComponent('fishslideto', {
             dir: data.dir,
             startEvents: data.startEvents,
         });
-        this.stsFN = function(child) {
-            console.log(child);
-            this.child = child;
+        this.stsFN = function() {
             var vec3pos = worldPos(el);
-            this.child.setAttribute('position', vec3pos);
+            selectedFish.setAttribute('position', vec3pos);
             data.from = vec3pos.x + " " + vec3pos.y + " " + vec3pos.z;
             console.log(data.from);
             el.emit('slideto');
