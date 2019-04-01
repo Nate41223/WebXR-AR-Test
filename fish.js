@@ -50,8 +50,10 @@ AFRAME.registerComponent('fish', {
         this.cFN = function() {
             if (selectedFish == null) {
                 self.updateFishData();
+                this.fishholder.appendChild(el);
             } else if (selectedFish != null && selectedFish == el) {
                 self.clearFishData();
+                el.sceneEL.appendChild(el);
             }
         };
         this.setupValues(fishNum);
@@ -70,9 +72,6 @@ AFRAME.registerComponent('fish', {
         console.log(this.fishholder);
     },
     clearFishData: function() {
-        var data = this.data;
-        var el = this.el;
-
         hideFishData();
         selectedFish = null;
     },
