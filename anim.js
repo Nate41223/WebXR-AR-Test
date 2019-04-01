@@ -60,7 +60,7 @@ AFRAME.registerComponent('fishslideto', {
         
         el.addEventListener('slidetosetup', this.stsFN());
     },
-    stsFN: function() {
+    stsFN: () => {
         var data = this.data;
         var el = this.el;
         console.log(el);
