@@ -58,9 +58,9 @@ AFRAME.registerComponent('fishslideto', {
         });
         console.log(el);
         
-        el.addEventListener('slidetosetup', this.stsFN);
+        el.addEventListener('slidetosetup', this.stsFN());
     },
-    stsFN: () => {
+    stsFN: function() {
         var data = this.data;
         var el = this.el;
         console.log(el);
@@ -83,7 +83,7 @@ AFRAME.registerComponent('fishslideto', {
         el.emit('slideto');
     },
     remove: function() {
-        this.el.removeEventListener('slidetosetup', this.stsFN);
+        this.el.removeEventListener('slidetosetup', this.stsFN());
         console.log("ouch");
     },
 });
