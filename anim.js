@@ -55,7 +55,9 @@ AFRAME.registerComponent('fishslideto', {
             startEvents: data.startEvents,
         });
         this.stsFN = function() {
-            data.from = worldPos(el);
+            var vec3pos = worldPos(el);
+            el.setAttribute('position', vec3pos);
+            data.from = new String(vec3pos.x + " " + vec3pos.y + " " + vec3pos.z);
             console.log(data.from);
             el.emit('slideto');
         };
