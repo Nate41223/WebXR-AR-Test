@@ -72,6 +72,8 @@ AFRAME.registerComponent('fish', {
         this.fishholder.appendChild(el);
     },
     clearFishData: function() {
+        var el = this.el;
+        
         hideFishData();
         selectedFish = null;
 
