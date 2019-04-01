@@ -150,7 +150,7 @@ AFRAME.registerComponent('spawntest2', {
             if (this.isMoving) {
                 this.child = document.createElement('a-boxtest');
                 el.appendChild(this.child);
-                console.log("added child");
+                //console.log("added child");
                 this.isMoving = false;
             } else {
                 // gets world pos of box and sets it when its removed so that it stays in the same spot.
@@ -162,7 +162,7 @@ AFRAME.registerComponent('spawntest2', {
 
                 el.sceneEl.appendChild(this.child);
                 //el.removeChild(this.child);
-                console.log("removed child");
+                //console.log("removed child");
                 this.isMoving = true;
             }
             this.time = 200;
