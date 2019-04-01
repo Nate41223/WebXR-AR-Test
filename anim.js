@@ -63,4 +63,8 @@ AFRAME.registerComponent('fishslideto', {
         };
         el.addEventListener('slidetosetup', this.stsFN);
     },
+    remove: function() {
+        this.el.removeEventListener('slidetosetup', this.stsFN);
+        console.log("ouch");
+    },
 });

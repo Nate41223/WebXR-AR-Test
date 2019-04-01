@@ -93,5 +93,6 @@ AFRAME.registerComponent('fish', {
     },
     remove: function() {
         this.el.removeEventListener('mousedown', this.cFN);
+        console.log("ouch");
     },
 });
