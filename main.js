@@ -52,6 +52,8 @@ AFRAME.registerComponent('fishfoodcollection', {
 AFRAME.registerComponent('slideanim', {
     schema: {
         property: {type:'string', default:'position'},
+        // I tried from: {type:'vec3', default:{x:1, y:.7, z:-1}} but would only play the animation once, clicking the box again did nothing.
+        // the default value type seems to be string (is not specified in API), the vec3 is converted to an {Object object} at runtime
         from: {type:'string', default:'1 .7 -1'},
         to: {type:'string', default:'-1 .7 -1'},
         dur: {type:'number', default:1000},
