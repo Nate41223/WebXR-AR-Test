@@ -63,6 +63,7 @@ AFRAME.registerComponent('fishslideto', {
         var data = this.data;
         var el = this.el;
         console.log(el);
+        console.log(this.el);
         //var vec3pos = worldPos(el);
         //selectedFish.setAttribute('position', vec3pos);
         //data.from = vec3pos.x + " " + vec3pos.y + " " + vec3pos.z;
