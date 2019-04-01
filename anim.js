@@ -46,7 +46,7 @@ AFRAME.registerComponent('fishslideto', {
     init: function() {
         var data = this.data;
         var el = this.el;
-        this.fishholder = document.querySelector("#fishhold");
+        var fishholder = document.querySelector("#fishhold");
 
         el.setAttribute('animation', {
             property: data.property,
@@ -56,31 +56,28 @@ AFRAME.registerComponent('fishslideto', {
             dir: data.dir,
             startEvents: data.startEvents,
         });
-        console.log(el);
+        this.stsFN = () => {
+            console.log(el);
+            console.log(this.el);
+            //var vec3pos = worldPos(el);
+            //selectedFish.setAttribute('position', vec3pos);
+            //data.from = vec3pos.x + " " + vec3pos.y + " " + vec3pos.z;
+            var fishpos = el.getAttribute('position');
+            data.from = fishpos;
+            console.log(fishpos);
+            console.log(fishholder);
+    
+            var holdpos = worldPos(fishholder);
+            data.to = holdpos.x + " " + holdpos.y + " " + holdpos.z;
+            el.setAttribute('animation', {
+                from: data.from,
+                to: data.to,
+            });
+    
+            el.emit('slideto');
+        },
         
         el.addEventListener('slidetosetup', this.stsFN);
-    },
-    stsFN: () => {
-        var data = this.data;
-        var el = this.el;
-        console.log(el);
-        console.log(this.el);
-        //var vec3pos = worldPos(el);
-        //selectedFish.setAttribute('position', vec3pos);
-        //data.from = vec3pos.x + " " + vec3pos.y + " " + vec3pos.z;
-        var fishpos = el.getAttribute('position');
-        data.from = fishpos;
-        console.log(fishpos);
-        console.log(this.fishholder);
-
-        var holdpos = worldPos(this.fishholder);
-        data.to = holdpos.x + " " + holdpos.y + " " + holdpos.z;
-        el.setAttribute('animation', {
-            from: data.from,
-            to: data.to,
-        });
-
-        el.emit('slideto');
     },
     remove: function() {
         this.el.removeEventListener('slidetosetup', this.stsFN);
