@@ -46,8 +46,13 @@ AFRAME.registerComponent('fish', {
         this.fishholder = document.querySelector("#fishhold");
         
         var fishNum = fish[Math.floor(Math.random() * Object.keys(fish).length) + 1];
+
         this.cFN = function() {
-            self.updateFishData();
+            if (selectedFish == null) {
+                self.updateFishData();
+            } else if (selectedFish != null && selectedFish == el) {
+                self.clearFishData();
+            }
         };
         this.setupValues(fishNum);
         this.setupEvents();
@@ -63,6 +68,13 @@ AFRAME.registerComponent('fish', {
         showFishData();
         selectedFish = el;
         console.log(this.fishholder);
+    },
+    clearFishData: function() {
+        var data = this.data;
+        var el = this.el;
+
+        hideFishData();
+        selectedFish = null;
     },
     setupValues: function(chosenFish) {
         var data = this.data;
