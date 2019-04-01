@@ -56,23 +56,24 @@ AFRAME.registerComponent('fishslideto', {
             dir: data.dir,
             startEvents: data.startEvents,
         });
-        this.stsFN = function() {
-            //var vec3pos = worldPos(el);
-            //selectedFish.setAttribute('position', vec3pos);
-            //data.from = vec3pos.x + " " + vec3pos.y + " " + vec3pos.z;
-            var fishpos = el.getAttribute('position');
-            data.from = fishpos;
-            console.log(fishpos);
+        
+        el.addEventListener('slidetosetup', stsFN());
+    },
+    stsFN: function() {
+        //var vec3pos = worldPos(el);
+        //selectedFish.setAttribute('position', vec3pos);
+        //data.from = vec3pos.x + " " + vec3pos.y + " " + vec3pos.z;
+        var fishpos = el.getAttribute('position');
+        data.from = fishpos;
+        console.log(fishpos);
 
-            var holdpos = worldPos(this.fishholder);
-            data.to = holdpos.x + " " + holdpos.y + " " + holdpos.z;
+        var holdpos = worldPos(this.fishholder);
+        data.to = holdpos.x + " " + holdpos.y + " " + holdpos.z;
 
-            el.emit('slideto');
-        };
-        el.addEventListener('slidetosetup', this.stsFN);
+        el.emit('slideto');
     },
     remove: function() {
-        this.el.removeEventListener('slidetosetup', this.stsFN);
+        this.el.removeEventListener('slidetosetup', stsFN());
         console.log("ouch");
     },
 });
