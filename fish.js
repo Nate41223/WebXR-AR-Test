@@ -53,7 +53,7 @@ AFRAME.registerComponent('fish2', {
     decideFish: function() {
 
         var chosenFish = fish[Math.floor(Math.random() * Object.keys(fish).length) + 1];
-        registeredFish.push([ this, {name:chosenFish.name, age:chosenFish.age, weight:chosenFish.weight, length:chosenFish.length}]);
+        registeredFish.push(this, {name:chosenFish.name, age:chosenFish.age, weight:chosenFish.weight, length:chosenFish.length});
         console.log(registeredFish);
 
         return chosenFish;
