@@ -43,7 +43,7 @@ AFRAME.registerComponent('fish', {
         var data = this.data;
         var el = this.el;
         var self = this;
-        //this.fishholder = document.querySelector("#fishhold");
+        this.fishholder = document.querySelector("#fishhold");
         
         this.fishData = self.decideFish();
         console.log(self.fishData);
@@ -93,7 +93,9 @@ AFRAME.registerComponent('fish', {
         data.length = chosenFish.length;
     },
     setupEvents: function() {
+        var el = this.el;
         this.el.addEventListener('mousedown', this.cFN);
+        el.parentNode = this.fishholder;
     },
     remove: function() {
         this.el.removeEventListener('mousedown', this.cFN);
