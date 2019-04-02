@@ -60,6 +60,7 @@ AFRAME.registerComponent('fish', {
         this.setupEvents();
     },
     decideFish: function() {
+        console.log(selectedFish);
         if(selectedFish != null) {
             return selectedFishData;
         }
@@ -89,7 +90,7 @@ AFRAME.registerComponent('fish', {
 
         selectedFish = null;
         selectedFishData = null;
-        
+
         el.emit('slidefromsetup',{},true);
     },
     setupValues: function(chosenFish) {
