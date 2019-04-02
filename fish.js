@@ -30,11 +30,9 @@ var fish = {
     '3':{'name':'Bill', 'age':25, 'weight':118.48, 'length':27},
     '4':{'name':'John', 'age':56, 'weight':340.27, 'length':70},
     '5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
-}
+};
 
-var registeredFish = {
-
-}
+var registeredFish = [];
 
 AFRAME.registerComponent('fish2', {
     schema: {
