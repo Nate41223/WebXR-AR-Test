@@ -55,7 +55,7 @@ AFRAME.registerComponent('fish', {
                 self.clearFishData();
             }
         };
-        this.setupValues(fishData);
+        this.setupValues(self.fishData);
         this.setupEvents();
     },
     decideFish: function() {
