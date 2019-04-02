@@ -6,7 +6,8 @@ h2 {
 
 #testing {
     width: 100%;
-    position: fixed;
+    position: absolute;
+    z-index: 10000;
 }
 
 #ffh {
