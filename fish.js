@@ -32,7 +32,7 @@ var fish = {
     '5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
 };
 
-var registeredFish = [];
+var registeredFish = {};
 
 AFRAME.registerComponent('fish2', {
     schema: {
