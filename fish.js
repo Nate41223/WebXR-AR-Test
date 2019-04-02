@@ -75,6 +75,7 @@ AFRAME.registerComponent('fish', {
         showFishData();
         selectedFish = el;
 
+        this.fishholder.appendChild(el);
         el.emit('slidetosetup',{},true);
     },
     clearFishData: function() {
@@ -82,6 +83,8 @@ AFRAME.registerComponent('fish', {
 
         hideFishData();
         selectedFish = null;
+
+        el.sceneEl.appendChild(el);
         el.emit('slidefromsetup',{},true);
     },
     setupValues: function(chosenFish) {
