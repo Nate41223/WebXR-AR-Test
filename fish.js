@@ -45,7 +45,7 @@ AFRAME.registerComponent('fish', {
         var self = this;
         //this.fishholder = document.querySelector("#fishhold");
         
-        this.fishData = decideFish();
+        this.fishData = self.decideFish();
         console.log(self.fishData);
 
         this.cFN = function() {
