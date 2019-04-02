@@ -4,6 +4,7 @@ var fishWeight = 'Weight:';
 var fishLength = 'Length:';
 // holds the reference of the currently selected fish
 var selectedFish;
+var selectedFishData;
 
 // called when player clicks on a fish
 var showFishData = function () {
@@ -60,9 +61,7 @@ AFRAME.registerComponent('fish', {
     },
     decideFish: function() {
         if(selectedFish != null) {
-            console.log(selectedFish);
-            console.log(selectedFish.el.fishData);
-            return selectedFish.fishData;
+            return selectedFishData;
         }
         return fish[Math.floor(Math.random() * Object.keys(fish).length) + 1];
     },
@@ -76,6 +75,7 @@ AFRAME.registerComponent('fish', {
         fishLength = 'Length: '+ data.length + "m";
         showFishData();
         selectedFish = el;
+        selectedFishData = this.fishData;
 
         this.fishholder.appendChild(el);
         el.emit('slidetosetup',{},true);
@@ -85,6 +85,7 @@ AFRAME.registerComponent('fish', {
 
         hideFishData();
         selectedFish = null;
+        selectedFishData = null;
 
         el.sceneEl.appendChild(el);
         el.emit('slidefromsetup',{},true);
