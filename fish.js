@@ -61,7 +61,7 @@ AFRAME.registerComponent('fish', {
     decideFish: function() {
         if(selectedFish != null) {
             console.log(selectedFish);
-            console.log(selectedFish.fishData);
+            console.log(selectedFish.el.fishData);
             return selectedFish.fishData;
         }
         return fish[Math.floor(Math.random() * Object.keys(fish).length) + 1];
