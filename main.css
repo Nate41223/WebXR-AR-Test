@@ -16,6 +16,7 @@ h2 {
     position: relative;
     float: right;
     background-color: black;
+    z-index: 1;
 }
 
 #ff {
@@ -33,6 +34,7 @@ h2 {
     display: none;
     flex-direction: column;
     justify-content: center;
+    z-index: 1;
 }
 
 .fishdata {
