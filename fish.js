@@ -32,6 +32,36 @@ var fish = {
     '5':{'name':'Steve', 'age':5, 'weight':56.65, 'length':18},
 }
 
+var registeredFish = {
+
+}
+
+AFRAME.registerComponent('fish2', {
+    schema: {
+        name: {type: 'string'},
+        age: {type: 'int'},
+        weight: {type: 'float'},
+        length: {type: 'int'},
+    },
+    init: function() {
+        var data = this.data;
+        var el = this.el;
+        var self = this;
+        this.fishholder = document.querySelector("#fishhold");
+        
+        this.fishData = self.decideFish();
+        console.log(self.fishData);
+    },
+    decideFish: function() {
+
+        var chosenFish = fish[Math.floor(Math.random() * Object.keys(fish).length) + 1];
+        registeredFish.push([ this, {name:chosenFish.name, age:chosenFish.age, weight:chosenFish.weight, length:chosenFish.length}]);
+        console.log(registeredFish);
+
+        return chosenFish;
+    },
+});
+
 // attach to any object you want to be a fish
 AFRAME.registerComponent('fish', {
     schema: {
